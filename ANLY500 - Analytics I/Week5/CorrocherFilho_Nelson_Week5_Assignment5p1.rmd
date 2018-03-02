@@ -1,0 +1,115 @@
+---
+title: "Assignment 5 - Part 1 - In Class Assignment"
+author: "Nelson Corrocher"
+date: "July 30, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# In Class Assigment
+
+## Example 1
+
+We use father.son dataset to investigate regressions and correlations, in a way to facilitate reproducibility
+
+The code below is used to prepare the environment for this example. It uses Father.Son data, which is part of the "UsingR" package:
+```{r env, include = TRUE}
+if (!require("UsingR")) {
+  install.packages("UsingR", repos="http://cran.rstudio.com/") 
+  library("UsingR")
+}
+```
+  
+Next, we standardize and center both father and son heights, preparing the variables for analysis:
+```{r std, tab.cap=""}
+y <- (father.son$sheight - mean(father.son$sheight)) / sd(father.son$sheight)
+x <- (father.son$fheight - mean(father.son$fheight)) / sd(father.son$fheight)
+
+```
+*Obs: We could have used the function scale instead*    
+
+Finally, we check the correlation between the two variables:
+```{r cor}
+rho <- cor(x,y)
+rho
+```
+
+Now we plot the correlation between these two variables graphically:
+```{r plot}
+library(ggplot2)
+g <- ggplot(data.frame(x = x, y = y), aes(x = x, y = y)) ## Creates 'g', a ggplot variable
+
+# The following two lines set up the point aesthetics of the variable
+g = g + geom_point(size = 6, colour = "black", alpha = 0.2) 
+g = g + geom_point(size = 4, colour = "salmon", alpha = 0.2)
+
+# and them set up the limits of visible graph (if outliers are present, the visuals could be messed up without it)
+g = g + xlim(-4,4) + ylim(-4,4)
+
+# The next three lines create graph lines, one vertical, one horizontal and one with the slope = 1, all passing through the origin
+g = g + geom_abline(intercept = 0, slope = 1)
+g = g + geom_vline(xintercept = 0)
+g = g + geom_hline(yintercept = 0)
+
+# These create some a line that using the slope of the correlation and a second one with the inverse of the correlation
+g = g + geom_abline(intercept = 0, slope = rho, size = 2)
+g = g + geom_abline(intercept = 0, slope = 1/rho, size = 2)
+g
+```
+
+## Example 2
+
+Below we create variables representing Federal Reserve rates.  
+*Obs: Data is available at http://www.federalreserve.gov/release/g19/20050805/* 
+```{r usfed-preset}
+year <- c(2000,2001,2002,2003,2004)
+rate <- c(9.34, 8.50, 7.62, 6.93, 6.60)
+```
+
+Now we show the plot representing the previous variables:
+```{r fedplot}
+plot(year, rate, main = "Commercial Banks Interest Rates", sub = "http://www.federalreserve.gov/release/g19/20050805/")
+```
+
+And now we show the correlation between the two variables:
+```{r fedcor}
+cor(year, rate)
+```
+As we can see, the correlatio is close to -1, which in practice, in uncommon.
+
+
+Now we create the model for rate(dependent variable) to year(independent variable)
+```{r fedfit}
+fit <- lm(rate ~ year) # The first Variable is the dependent and the second one is the independent
+fit
+```
+
+Understanding that composes the fit variable:
+```{r defattr}
+attributes(fit)
+```
+
+To check how good the model is, we now are going to check the residuals:
+```{r fedres}
+res <- rate - (fit$coefficients[[2]]*year+fit$coefficients[[1]])
+res
+```
+
+and we plot the residuals:
+```{r redresplo}
+plot(year,res)
+```
+
+Here we plot the federal rates with the fit line
+```{r plotfin}
+plot(year,rate)
+abline(fit)
+```
+
+And finally we get a summary on the model
+```{r summ}
+summary(fit)
+```

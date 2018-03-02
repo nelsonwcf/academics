@@ -1,0 +1,62 @@
+---
+title: "Using Financial Report Release Dates In Straddle Strategies"
+shorttitle: "FINANCIAL REPORTS AND STRADDLES"
+author: 
+  - name: Nelson Corrocher
+    affiliation: 
+    corresponding: yes    # Define only one corresponding author
+    address: 
+    email: ncorrocher@my.harrisburgu.edu
+  - name: Adela Devarajan
+    affiliation:
+  - name: Nikoloz Lelashvili
+    affiliation:
+affiliation:
+  - id: 
+    institution: Harrisburg University
+
+abstract:
+   In the context of financial investment, creating a "straddle"[@straddle] close to the release date of the financial statement from public traded companies has been used by many fund managers for some time. The goal of this research is to measure the if a systematic approach of such strategy using blue chip stock options can indeed yield above-the-average returns.
+   
+author_note:  |
+  | Nelson Corrocher, M.B.A.
+  | Adela Devarajan  
+  | Nikoloz Lelashvili  
+
+keywords: "straddle options financial reports"
+
+wordcount: 58
+
+class: man
+lang: english
+figsintext: no
+figurelist: no
+tablelist: no
+lineno: no
+bibliography:
+  - r-references.bib
+
+output: papaja::apa6_pdf
+---
+
+```{r message = FALSE, warning = FALSE}
+library("papaja")
+```
+  During a trading simulation in a graduate investment class at Boston University in 2014, the winning strategy used a straddle close to the release date of the 10-K of a certain public company. Such performance raised the question of using a systematic investment in blue chip straddles close to the companyies' financial statement release as a potential strategy in which the returns would be above average. It is currently known that many fund managers use such strategy as part of their strategies' portfolio. However, since they use additional criteria to decide which company stocks should they straddle. So far, no found literature studied the expected returns of taking a systematic investment approach of creating straddles on the most negotiated public companies, the so called Blue Chips.  
+  The approach of measuring the returns invoves collecting stock prices from Blue Chip companies and comparing their price variation close to the release data of Quarterly and Yearly financial to their average price variation. If the hypothesis that the two sets (variation close to the release date and at a random date) is rejected, a simulation will be ran on past data to see if a systematic approach could yield returns greater than the passive index average, which could provide a complementary strategy to the passive index investment. 
+  The data is going to collected from public available sources as it could be easily replicated by others. The methodology is still being defined based on the availability and quality of data. 
+
+# Methods
+
+## Participants
+No direct participants were involved in this research as the main inputs for the analysis were financial market data public available. 
+
+\newpage
+
+# References
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}

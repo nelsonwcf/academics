@@ -1,0 +1,142 @@
+---
+title: "Data Analysis Assignment"
+author: "Nelson Corrocher"
+date: "July 31, 2016"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Preparing the Environment
+```{r varinit}
+v <- read.csv("LIWC2015 Results.csv")
+library(ggplot2)
+```
+
+## Exploratory Analysis
+###Generate basic statistics about the dataset using functions like "summary()", execute "mean()" and "sd()" on the Wordcount and WPS columns 
+```{r descsumm, echo = FALSE}
+cat("Variables Summary:")
+summary(v)
+cat("WPS Mean +/- SD:",mean(v$WPS),"+/-", sd(v$WPS))
+cat("WC Mean +/- SD:",mean(v$WC),"+/-", sd(v$WC))
+```
+
+###Find the columns with the least/greatest correlation.
+```{r correl, echo=FALSE}
+# Create a copy of the main dataset
+v_alt <- v
+
+# Eliminate non-numerical fields from the dataset
+v_alt$Filename <- NULL
+v_alt$Author <- NULL
+
+# Create a correlation matrix of values in the data frame
+v_alt_cor <- cor(v_alt)
+
+# Scan correlation matrix to capture greatest and smallest correlation, returning the value and name;
+maxcol <- 0 # Col with greatest correlation
+maxrow <- 0 # Row with greatest correlation
+mincol <- 0 # Col with least correlation
+minrow <- 0 # Row with least correlation
+mincor <- 0 # Greatest correlation
+maxcor <- 0 # Least correlation
+
+for (i in 1:ncol(v_alt_cor)) {
+  for (j in 1:nrow(v_alt_cor)) {
+    if (i != j) {
+      if (v_alt_cor[i,j] > maxcor) {
+        maxcor <- v_alt_cor[i,j]
+        maxcol <- i
+        maxrow <- j
+      }
+      if (v_alt_cor[i,j] < mincor) {
+        mincor <- v_alt_cor[i,j]
+        mincol <- i
+        minrow <- j
+      }
+    }
+  }
+}
+
+cat("Greatest Correlation:",maxcor,",between",rownames(v_alt_cor)[maxrow],"and",colnames(v_alt_cor)[maxcol])
+cat("Least Correlation:",mincor,",between",rownames(v_alt_cor)[minrow],"and",colnames(v_alt_cor)[mincol])
+```
+###Find and include definitions for Residuals vs Fitted, Normal Q-Q, Scale-Location, Residuals vs Leverage as part of your markdown before the plots.   
+- **Residual vs Fit:** The plot is used to detect non-linearity, unequal error variances, and outliers.
+- **Normal Q-Q:** A graphical method for comparing two probability distributions by plotting their quantiles against each other.
+- **Residuals vs Leverage:** Method used to try to isolate the effects of a single variable on the residuals. The plot shows contours of equal Cook's distance
+- **Scale-Location:** Ttakes the square root of the absolute residuals in order to diminish skewness.
+
+###Generate linear regression plots for the top 3 correlations you find 
+```{r plot1, echo = FALSE}
+
+# Creates linear fit coeficients
+c1 <- lm(v$YearPublished ~ v$DecadePublished)
+
+
+## Creates 'g1', a ggplot variable
+g1 <- ggplot(data.frame(x = v$DecadePublished, y = v$YearPublished), aes(x = v$DecadePublished, y = v$YearPublished)) 
+
+# The following two lines set up the point aesthetics of the variable
+g1 = g1 + geom_point(size = 1, colour = "black") 
+g1 = g1 + geom_abline(intercept = c1$coefficients[1], slope = c1$coefficients[2], size = 1)
+g1
+```
+
+```{r plot2, echo = FALSE}
+# Creates linear fit coeficients
+c2 <- lm(v$shehe ~ v$male)
+
+## Creates 'g2', a ggplot variable
+g2 <- ggplot(data.frame(x = v$male, y = v$shehe), aes(x = v$male, y = v$shehe)) 
+
+# The following two lines set up the point aesthetics of the variable
+g2 = g2 + geom_point(size = 1, colour = "black") 
+g2 = g2 + geom_abline(intercept = c2$coefficients[1], slope = c2$coefficients[2], size = 1)
+g2
+```
+
+```{r plot3, echo = FALSE}
+# Creates linear fit coeficients
+c3 <- lm(v$Clout ~ v$social)
+
+## Creates 'g2', a ggplot variable
+g3 <- ggplot(data.frame(x = v$social, y = v$Clout), aes(x = v$social, y = v$Clout)) 
+
+# The following two lines set up the point aesthetics of the variable
+g3 = g3 + geom_point(size = 1, colour = "black") 
+g3 = g3 + geom_abline(intercept = c3$coefficients[1], slope = c3$coefficients[2], size = 1)
+g3
+```
+
+###Describe 2 predictions you might be able to make about the use of language in psychology textbooks over the next decade 
+
+This question is a bit subjective because the column names are not very clear what they mean so we have to take some assumptions here. In this example, let's use three variables:
+
+- DecadePublished
+- Anger
+- Sad
+
+It would be better if we had variable that classified these book titles by subject, so it would be possible to try to predict the usage of these words only in Psychology books. Here, to linear models are going to be run: (DecadePublished ~ Anger) and (DecadePublished ~ Sad). The results will be evaulated based on what has happened to the use of the two words (sad and Anger, closely related to psychology subject) related to the time, and assuming the same trend will happen with Psychology books.
+
+```{r LM, echo = FALSE}
+summary(lm(v$DecadePublished ~ v$anger))
+summary(lm(v$DecadePublished ~ v$sad))
+```
+
+Since the slope of of both words seems to be positive and the p-value significantly less than 0.05, one could expect that the use of both words in literature titles are going to increase.
+
+###Are there any multiply correlated columns in the dataset - where 3 or even 4 columns track together with a strong correlation?
+
+```{r multivar}
+summary(lm(v$WC ~ v$Sixltr +v$function. + v$ppron))
+```
+Yes. The example above, assuming WC could be caused by Sixltr, function, ppron, these three variables would have together a strong explanation power on the results of WC. Again, the data used had no meta data to explain what its fields meant so definiting causal relation between them is very difficult. It is has value as an example, though.
+
+### Session Info
+```{r session}
+sessionInfo()
+```

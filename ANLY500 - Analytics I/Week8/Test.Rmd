@@ -1,0 +1,37 @@
+---
+title: "Using Financial Report Release Dates In Straddle Strategies"
+shorttitle: "FINANCIAL REPORTS AND STRADDLES"
+author: 
+  - name: Nelson Corrocher
+    affiliation: 
+    corresponding: yes    # Define only one corresponding author
+    address: 
+    email: ncorrocher@my.harrisburgu.edu
+  - name: Adela Devarajan
+    affiliation:
+  - name: Nikoloz Lelashvili
+    affiliation:
+affiliation:
+  - id: 
+    institution: Harrisburg University
+
+abstract:
+   In my investment class, I had the idea to use a "straddle" strategy close to the release date of the financial statement of the companies and it performed well. Most professionals from the market says that the price is already reflected before the release of the financial statements. However, no one could provide me any paper showing evidence for that. Additionally, many senior fund managers know that all the theory work well in an efficient market, but all of them know that the market is not really efficient.For this reason, for ANLY 500-52-2016, my suggestion is to use data from stock market and compare it to release data of Quarterly and Yearly financial and check if there is a significant impact in price change slight before and after the financial statements are released.  
+  
+author_note:
+
+keywords: "straddle options financial reports"
+
+wordcount: X
+
+class: man
+lang: english
+figsintext: no
+figurelist: no
+tablelist: no
+lineno: no
+bibliography:
+  - r-references.bib
+
+output: papaja::apa6_pdf
+---

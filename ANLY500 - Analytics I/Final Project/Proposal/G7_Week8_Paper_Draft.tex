@@ -1,0 +1,200 @@
+\documentclass[english,man]{apa6}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Table formatting
+\usepackage{longtable, booktabs}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+\newenvironment{ltable}
+  {\begin{landscape}\begin{center}\begin{threeparttable}}
+  {\end{threeparttable}\end{center}\end{landscape}}
+
+\newenvironment{lltable}
+  {\begin{landscape}\begin{center}\begin{ThreePartTable}}
+  {\end{ThreePartTable}\end{center}\end{landscape}}
+
+\usepackage{ifthen} % Only add declarations when endfloat package is loaded
+\ifthenelse{\equal{man}{\string jou}}{%
+  \DeclareDelayedFloatFlavor{ThreePartTable}{table} % Make endfloat play with longtable
+  \DeclareDelayedFloatFlavor{ltable}{table} % Make endfloat play with lscape
+  \DeclareDelayedFloatFlavor{lltable}{table} % Make endfloat play with lscape & longtable
+}{}%
+
+
+% The following enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand\getlongtablewidth{%
+ \begingroup
+  \ifcsname LT@\roman{LT@tables}\endcsname
+  \global\longtablewidth=0pt
+  \renewcommand\LT@entry[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}%
+  \@nameuse{LT@\roman{LT@tables}}%
+  \fi
+\endgroup}
+
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            pdfauthor={},
+            pdftitle={Using Financial Report Release Dates In Straddle Strategies},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\setcounter{secnumdepth}{0}
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{}
+\else
+  \usepackage[english]{babel}
+\fi
+
+% Manuscript styling
+\captionsetup{font=singlespacing,justification=justified}
+\usepackage{csquotes}
+\usepackage{upgreek}
+
+
+
+\usepackage{tikz} % Variable definition to generate author note
+
+% fix for \tightlist problem in pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Essential manuscript parts
+  \title{Using Financial Report Release Dates In Straddle Strategies}
+
+  \shorttitle{FINANCIAL REPORTS AND STRADDLES}
+
+
+  \author{Nelson Corrocher, Adela Devarajan, \& Nikoloz Lelashvili}
+
+  \def\affdep{{"", "", ""}}%
+  \def\affcity{{"", "", ""}}%
+
+  \affiliation{
+    \vspace{0.5cm}
+          \textsuperscript{} Harrisburg University  }
+
+  \authornote{
+    \newcounter{author}
+    Nelson Corrocher, M.B.A.\\
+    Adela Devarajan\\
+    Nikoloz Lelashvili
+
+                      Correspondence concerning this article should be addressed to Nelson Corrocher. E-mail: \href{mailto:ncorrocher@my.harrisburgu.edu}{\nolinkurl{ncorrocher@my.harrisburgu.edu}}
+                                    }
+
+
+  \abstract{In the context of financial investment, creating a
+``straddle''(Investopedia, 2003) close to the release date of the
+financial statement from public traded companies has been used by many
+fund managers for some time. The goal of this research is to measure the
+if a systematic approach of such strategy using blue chip stock options
+can indeed yield above-the-average returns.}
+  \keywords{straddle options financial reports \\
+
+    \indent Word count: 58
+  }
+
+
+
+
+\begin{document}
+
+\maketitle
+
+
+
+During a trading simulation in a graduate investment class at Boston
+University in 2014, the winning strategy used a straddle close to the
+release date of the 10-K of a certain public company. Such performance
+raised the question of using a systematic investment in blue chip
+straddles close to the companyies' financial statement release as a
+potential strategy in which the returns would be above average. It is
+currently known that many fund managers use such strategy as part of
+their strategies' portfolio. However, since they use additional criteria
+to decide which company stocks should they straddle. So far, no found
+literature studied the expected returns of taking a systematic
+investment approach of creating straddles on the most negotiated public
+companies, the so called Blue Chips.\\
+ The approach of measuring the returns invoves collecting stock prices
+from Blue Chip companies and comparing their price variation close to
+the release data of Quarterly and Yearly financial to their average
+price variation. If the hypothesis that the two sets (variation close to
+the release date and at a random date) is rejected, a simulation will be
+ran on past data to see if a systematic approach could yield returns
+greater than the passive index average, which could provide a
+complementary strategy to the passive index investment.\\
+ The data is going to collected from public available sources as it
+could be easily replicated by others. The methodology is still being
+defined based on the availability and quality of data.
+
+\section{Methods}\label{methods}
+
+\subsection{Participants}\label{participants}
+
+No direct participants were involved in this research as the main inputs
+for the analysis were financial market data public available.
+
+\newpage
+
+\section{References}\label{references}
+
+\setlength{\parindent}{-0.5in} \setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\hypertarget{ref-straddle}{}
+Investopedia. (2003). Straddle definition. Retrieved from
+\url{http://www.investopedia.com/terms/s/straddle.asp}
+
+
+
+
+
+\end{document}
