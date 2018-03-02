@@ -1,0 +1,260 @@
+---
+title: Project Proposal - Predicting if a US citizen makes more than $50k / year in
+  1994 based on their social-demographic attributes
+author: "Nelson Corrocher"
+date: "May 1st, 2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE)
+setwd("C:/Users/corrocherfilhonw/Dropbox/Harrisburg/ANLY530 - Machine Learning I/Online Class 5")
+# setwd("D:/Dropbox/Harrisburg/ANLY530 - Machine Learning I/Online Class 5")
+is.installed <- function(pkg) {
+  is.element(pkg, installed.packages()[,1])
+}
+
+if (!is.installed("psych")) {
+  install.packages("psych", repos='http://cran.us.r-project.org')
+}
+
+if (!is.installed("ggplot2")) {
+  install.packages("ggplot2", repos='http://cran.us.r-project.org')
+}
+
+if (!is.installed("data.table")) {
+  install.packages("data.table", repos='http://cran.us.r-project.org')
+}
+
+if (!is.installed("C50")) {
+  install.packages("C50", repos='http://cran.us.r-project.org')
+}
+
+if (!is.installed("gmodels")) {
+  install.packages("gmodels", repos='http://cran.us.r-project.org')
+}
+
+if (!is.installed("knncat")) {
+  install.packages("knncat", repos='http://cran.us.r-project.org')
+}
+
+library("knncat")
+library("gmodels")
+library("C50")
+library("data.table")
+library("psych")
+library("ggplot2")
+```
+
+# Project Proposal
+
+The goal of this project is to use machine learning tools in a well known dataset to develop a model used to predict the outcome of new data points.
+
+## Data Set
+
+The data set that is going to be used is the well know Adult Data Set, a subset of the Census Income Data from 1994 which has been used extensively and many research projects. The data set is located at this address: http://archive.ics.uci.edu/ml/datasets/Adult. 
+
+This data set contains the target attribute income, a binary attribute holding {>50K,<=50K}. The intent of this project is to be able to answer the following questions:
+
+1. Given a new socio-economic profile from 1994, what would be his income range?
+2. What attributes were the most correlated with income in 1994?
+3. What is the prediction power of the best model we can create using this data set and the tools learned so far.
+
+For this project, two tools have been considered: **decision trees**, constructed using the entropy metric; and **k-nearest neighbors** classification tool. By using two conceptually different tools, it should be possible to get two distinct models with distinct predictive power, and a direct comparison between them and which one was the most accurate for this specific data set, including positive points and pitfalls of both. 
+
+At this point, since the data is unknown, it is difficult to state the expected accuracy. Obviously, it is expected to be significantly higher than 50% as the target variable is binary and random guess could provide around 50% (depending on the data being balanced or not for the target variable). However, the data description in the website states that the models could provide around 80% accuracy (http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.names) so this will be taken as the target accuracy of this project.
+
+Below, it is presented a preliminary data analysis on the dataset that is going to be used. Since this data set has been used intensively in the past, most of the initial data preparations are already done. The only thing it was needed was to combine the data that was divided into training and test. From the full file, we can get different proportions and using different sampling methods, if needed.
+
+## Attributes
+
+Below the description of the attributes contained in the data set.
+
++ **age:** continuous.  
++ **workclass:** Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked.
++ **fnlwgt:** continuous.
++ **education:** Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool.
++ **education-num:** continuous.
++ **marital-status:** Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent, Married-AF-spouse.
++ **occupation:** Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners, Machine-op-inspct, Adm-clerical, Farming-fishing, Transport-moving, Priv-house-serv, Protective-serv, Armed-Forces.
++ **relationship:** Wife, Own-child, Husband, Not-in-family, Other-relative, Unmarried.
++ **race:** White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black.
++ **sex:** Female, Male.
++ **capital-gain:** continuous.
++ **capital-loss:** continuous.
++ **hours-per-week:** continuous.
++ **native-country:** United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands.
++ **income**: >50K, <=50K. This is the target feature.
+
+## Initial analysis
+
+Below are some initial variable analysis (not exhaustive) for some preliminary insights. More tests will be executed in the next steps, when effectively creating and training the model.
+
+```{r summary}
+raw <- read.csv("full_adult_set.txt")
+
+# checking if the data was correctly loaded into R.
+str(raw)
+
+# descriptive summary of the variables
+summary(raw)
+
+# checking the distribuion of the target attribute
+barplot((table(raw$income)))
+
+# looking for some correlations
+pairs.panels(raw[c("age", "education.num", "capital.gain", "capital.loss", "hours.per.week")])
+```
+
+## Dataset Treatment for the next models.
+
+```{r data_clean_up}
+
+# first step is to eliminate attributes that are not going to be used for the model. Since there is no description of what is fnlwgt, this attribute is going to be excluded.
+
+cleaned_dataset <- raw
+cleaned_dataset$fnlwgt <- NULL
+
+# the workclass missing data (represented as "?") could be misleading for the system.
+# using the small multiples technique, we can decide on the best approach for "?"
+
+rawdt <- data.table(raw)
+new_data <- rawdt[, .N, by = .(income, workclass)][, classN := sum(N), by = workclass][, y := N/classN]
+ggplot(new_data, aes(x = income, y = y)) + geom_bar(stat = "identity") + facet_wrap(~workclass)
+
+# the dataset being large enough and to relative difference between ? and the others, we can exclude the datapoints in which workclass = " ?"
+
+cleaned_dataset <- subset(cleaned_dataset, workclass != " ?")
+
+ # now, same idea as before but for native.country
+
+rawdt <- data.table(raw)
+new_data <- rawdt[, .N, by = .(income, native.country)][, classN := sum(N), by = native.country][, y := N/classN]
+ggplot(new_data, aes(x = income, y = y)) + geom_bar(stat = "identity") + facet_wrap(~native.country)
+
+cleaned_dataset <- subset(cleaned_dataset, native.country != " ?")
+
+# just to simplify the variable's name for later work
+cd <- cleaned_dataset
+```
+
+## Model 1
+
+As stated above, the first model to be constructed will be a entropy-based decision trees using the C50 algorithm (evolution of the ID3). Below is the code for creating the decision tree.
+
+```{r model_1}
+
+# this line was used just for testing during the model development.
+set.seed(666)
+
+# shuffle the data points to reduce biases
+cd_rand <- cd[order(runif(nrow(cd))),]
+
+# variable to define training size, in percentage
+t_size = 0.1
+
+cut_off = round(t_size * nrow(cd_rand))
+cd_train <- cd_rand[1:cut_off,]
+cd_test <- cd_rand[cut_off:nrow(cd_rand),]
+
+
+# check if the target variable is evenly distribute between train and test
+table(cd_train$income) / nrow(cd_train)
+table(cd_test$income) / nrow(cd_test)
+
+# the model is created below with the target variable 'income'
+model <- C5.0(cd_train[-14], cd_train$income)
+model
+summary(model)
+```
+
+The summary above shows all the steps of the tree (still no graph drawing approach available for C5.0) and it shows a tree that is 51 decisions deep. By testing the data it used to train, it showed an error (very likely overfitted) of 12.3% (557 misclassified points).
+
+The next step is to effecitively test the model with the testing data.
+
+```{r testing}
+predicted_Values <- predict(model, cd_test)
+
+CrossTable(cd_test$income, predicted_Values, prop.chisq = FALSE, prop.c = FALSE, prop.r = FALSE, dnn = c('actual income', 'predicted income'))
+```
+
+As it is shown, 6181 of 40710, an error of around **15.2%**, which matches the expected accuracy mentioned above.
+
+To see if this model can be improved, a simple refinement is tried on the next block: Boosting, which means combining trails on different datasets with the goal of producing a stronger model.
+
+```{r model_1_boosting}
+model <- C5.0(cd_train[-14], cd_train$income, 20)
+
+predicted_Values <- predict(model, cd_test)
+CrossTable(cd_test$income, predicted_Values, prop.chisq = FALSE, prop.c = FALSE, prop.r = FALSE, dnn = c('actual income', 'predicted income'))
+```
+
+Using boosting, the error could be slightly reduced to **14.6%** for a 4% improvement in the model accuracy.
+
+## Model 2
+
+The next model to be constructed is k-nearest neighbor model that classifies a new data point based on similarity to current data points. 
+
+Before creating the model, there are some additional steps:
++ converting categorical variables into continuous (the knn classifier package **knncat** can do this automatically)
++ the continuous variables scaled to avoid overweighting (the knn classifier package **knncat** can do this automatically)
++ dataset cleaned of blank factors. 
+
+```{r categ2cont}
+set.seed(1999)
+t_size = 0.4
+
+# Issue: There is only data point in which native country is Holand-Netherlands. This causes problems due to different factor levels in training and testing.
+# for this exercise, this data-point is going to be removed.
+cd_rand_s <- subset(cd_rand, native.country != " Holand-Netherlands")
+
+cut_off = round(t_size * nrow(cd_rand_s))
+cd_train <- cd_rand_s[1:cut_off,]
+cd_test <- cd_rand_s[cut_off:nrow(cd_rand_s),]
+
+# Scaling continuous variables
+cd_train$age <- scale(cd_train$age)
+cd_train$education.num <- scale(cd_train$education.num)
+cd_train$capital.gain <- scale(cd_train$capital.gain)
+cd_train$capital.loss <- scale(cd_train$capital.loss)
+cd_train$hours.per.week <- scale(cd_train$hours.per.week)
+
+cd_test$age <- scale(cd_test$age)
+cd_test$education.num <- scale(cd_test$education.num)
+cd_test$capital.gain <- scale(cd_test$capital.gain)
+cd_test$capital.loss <- scale(cd_test$capital.loss)
+cd_test$hours.per.week <- scale(cd_test$hours.per.week)
+
+# Cleaining up empty factors
+cd_train_d <- droplevels(cd_train)
+cd_test_d <- droplevels(cd_test)
+
+# Training the model - Letting the algorithm select the k for the best fit.
+knn_model <- knncat(cd_train_d, classcol = 14)
+
+# Predicting the model
+knn_pred <- predict(knn_model, cd_train_d, cd_test_d, train.classcol = 14)
+table(knn_pred, cd_test_d$income)
+
+# Error:
+(table(knn_pred, cd_test_d$income)[1,2] + table(knn_pred, cd_test_d$income)[2,1]) / nrow(cd_test_d)
+```
+
+Using the knn approach, we get an error of **16.2%**, greater than using the model 1.
+
+Some issues found:
+
++ Due to the number of categorical variables, each one having a big numbers of factors, the application of knn model to this dataset suffers from the curse of dimensionality, as the dataset size would have to be bigger to compensate for low density of instances in some regions. One possible approach here could be to aggregate some factors together (for example, native.country could be aggregated in the 1st/3rd word countries, continent, etc).
++ The training size had to be increased because of the low occurences of some factors in some variables. While this is not always a bad thing, the risk for overfitting increases.
++ The package knncat automatically selects many of the optimizations automatically and for this reason, it limits the possible customizations. For example, it doesn't let k to be selected, only the maximum k. The same for which variables are used.
+
+## Analysis
+
+Comparing the results from both tools and the expected value of 80-90% range, the model results seem to achieve the expected precision. In fact, by comparing the results to those of previous tries on the same data (http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.names), it can be seem that the decision tree model error is very close to the expected, while the Knn method from model two showed an absolute improvement of 5% in error. This difference could be due a change in the algorithm, a difference in its assumptions, the selection of variables used or any other parameter. Even with this improvement, the error was kept in the expected range. In summary, this analysis achieved a result very close to the best one from previous tests, which used a Naive Bayes model.
+
+From both models and previous results data (mode #1, 14.6% error vs model#2, 16.2% error), it can be confirmed that for this specific problem, decision trees based on entropy seem to provide a superior precision. While more analysis would have to be performed to explain the reason behind that, one potential candidate could be the number of binary categorical variables leading to the problem of curse of dimensionality (many regions in the feature space had very low density of data points), exacerbated by the creation of dummy variables for each factor on categorical variables. The decision tree didn't suffer from this issue.
+
+While not a big problem, the major difficulty was to break down the data into training and testing sets because the two sets often didn't end with the same number of factors in each variable. This occurence strongly suggests some imbalance in the distribution of factors in the data. Thus, treating the set by removing irrelevant data points, that is, those having very rare occurrences (as it was done with Netherlands) could lead to a improvement in the accuracy of the model.
+
+One possible way to improve k-nn results could be to aggregate variables together. For example, one of the variables was the country which had 15 or 16 factors. Maybe this could be reduced to regions instead (as long as the target variable proportion in each region's country is not very different) reducing the dimensionality problem. Similar approach could be followed for the other categorical variables.

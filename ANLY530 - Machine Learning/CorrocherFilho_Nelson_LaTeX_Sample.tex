@@ -1,0 +1,26 @@
+\documentclass[11pt, a4paper]{article}
+\title{ANLY 530-50-2017 - Homework 1\\ Data Exploration}
+\author{Nelson Corrocher}
+\date{March 2017}
+\begin{document}
+\maketitle
+\section{Definition}
+\paragraph{}\textbf{Sharding}, also called \textbf{Horizontal Partitioning}, is a method of splitting and storing a single logical dataset in multiple databases. By distributing the data among multiple machines, a cluster of database systems can store larger dataset and handle additional requests. Sharding is necessary if a dataset is too large to be stored in a single database. Moreover, many sharding strategies allow additional machines to be added. Sharding allows a database cluster to scale along with its data and traffic growth.
+
+\begin{itemize}
+\item\textbf{HMaster}: coordinates the HBase Cluster and is responsible for administrative operations, like assigning regions to servers or keeping META table updated.
+\item\textbf{RegionServer}: can serve one or more Regions. Each Region is assigned to a Region Server on startup and the master can decide to move a Region from one Region Server to another as the result of a load balance operation. The Master also handles Region Server failures by assigning the region to another Region Server.
+\item\textbf{Zookeeper:} this is not a component of HBase but a part of Hadoop Ecosystem. It is a process used for interprocess communications between elements in the distributed system. HBase uses Zookeeper as the way the HMaster and RegionServers communicate with each other. 
+\item\textbf{META table:} stored by HMaster in Zookeeper (external locator service); by reading META, one can identify which region is responsible for one key. This means that for read and write operations, the master is not involved at all, and clients can go directly to the Region Server responsible to serve the requested data.
+\end{itemize}
+
+
+\begin{thebibliography}{1}
+\bibitem{Shard2014}How Sharding Works. (2014). Medium. Retrieved 30 July 2016, from https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6\#.7mlw0750o
+\bibitem{Shard2016}HBase - Who needs a Master? : Apache HBase. (2016). blogs.apache.org. Retrieved 30 July 2016, from https://blogs.apache.org/hbase/entry/hbase\_who\_needs\_a\_master
+
+\end{thebibliography}
+
+\paragraph{} Total words (excluding title and references): 728 words
+
+\end{document}

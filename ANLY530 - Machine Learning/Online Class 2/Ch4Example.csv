@@ -1,0 +1,47 @@
+SELECT
+    ID,
+    Field1 as [ACCOUNT NAME],
+    'BUDGET' as [B&A],
+    1 as [QUARTER],
+    2015 as [YEAR],
+    'CORP' as [UNIT],
+    [CORP1st QUARTER] as [AMOUNT]
+FROM
+    [SUMMARY]
+
+UNION ALL
+
+SELECT
+    ID,
+    Field1 as [ACCOUNT NAME],
+    'BUDGET' as [B&A],
+    2 as [QUARTER],
+    2015 as [YEAR],
+    'CORP' as [UNIT],
+    [CORP2nd QUARTER] as [AMOUNT]
+FROM
+    [SUMMARY]
+
+UNION ALL
+
+SELECT
+    ID,
+    Field1 as [ACCOUNT NAME],
+    'BUDGET' as [B&A],
+    3 as [QUARTER],
+    2015 as [YEAR],
+    'CORP' as [UNIT],
+    [CORP3rd QUARTER] as [AMOUNT]
+FROM
+    [SUMMARY]
+
+UNION ALL SELECT
+    ID,
+    Field1 as [ACCOUNT NAME],
+    'BUDGET' as [B&A],
+    4 as [QUARTER],
+    2015 as [YEAR],
+    'CORP' as [UNIT],
+    [CORP4th QUARTER] as [AMOUNT]
+FROM
+    [SUMMARY];

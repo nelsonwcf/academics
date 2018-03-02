@@ -1,0 +1,18 @@
+@relation R_data_frame
+
+@attribute ID {1,2,3,4,5,6,Q1,Q2,Q3}
+@attribute WAVE_SIZE_.FT. numeric
+@attribute WAVE_PERIOD_.SECS. numeric
+@attribute WIND_SPEED_.MPH. numeric
+@attribute GOOD_SURF {'',no,yes}
+
+@data
+1,6,15,5,yes
+2,1,6,9,no
+3,7,10,4,yes
+4,7,12,3,yes
+5,2,2,10,no
+6,10,2,20,no
+Q1,8,15,2,''
+Q2,8,2,18,''
+Q3,6,11,4,''

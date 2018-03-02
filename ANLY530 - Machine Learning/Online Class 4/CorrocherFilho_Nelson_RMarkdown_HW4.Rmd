@@ -1,0 +1,70 @@
+---
+title: "Homework 4 - Forecasting Numeric Data - Regression Methods"
+author: "Nelson Corrocher"
+date: "March 29, 2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE)
+# setwd("C:/Users/corrocherfilhonw/Dropbox/Harrisburg/ANLY530 - Machine Learning I/Online Class 4")
+setwd("D:/Dropbox/Harrisburg/ANLY530 - Machine Learning I/Online Class 4")
+is.installed <- function(pkg) {
+  is.element(pkg, installed.packages()[,1])
+}
+
+if (!is.installed("psych")) {
+  install.packages("psych", repos='http://cran.us.r-project.org')
+}
+library("psych")
+```
+
+## Homework
+
+1.Using the dataset provided (insurance.csv), follow the steps described in Chapter 6 (Forecasting Numeric Data - Regression Methods) (pages 172-186) "Example - predicting medical expenses using linear regression" and upload a document with your steps and results. 
+
+```{r from_book}
+# Loads the dataset. Obs: stringsAsFactors are defaulted to TRUE so the option is not necessary.
+insurance <- read.csv("insurance.csv")
+
+# Confirming the dataset was loaded correctly.
+str(insurance)
+
+# Checking the basic statistics on the y (dependent) variable.
+summary(insurance$charges)
+
+# Checking the distribution. Obs.: The book's author states since the mean is different than the median the graph is right skewed. While technically right, sometimes the skew is so small that it could be approximated to the bell curve. In this case, thought, the author premise is justified, as the y variable ideally should have a normal distribution and this one looks more like a Poisson distribution. This may require future adjustments or the use of the Poisson regression instead.
+hist(insurance$charges)
+
+# Checking the distribuion of the data points through the regions.
+barplot((table(insurance$region)))
+
+# Creating the correlation matrix, which can provide a good idea on what variables are or aren't suitable for the model.
+cor(insurance[c("age", "bmi", "children", "charges")])
+
+# Creating a scatterplot matrix (SPLOM) so that we can get insights on the relation between variables.
+pairs(insurance[c("age", "bmi", "children", "charges")])
+
+# This creates a combination of the correlation matrix and the SPLOM.
+pairs.panels(insurance[c("age", "bmi", "children", "charges")])
+
+# Building the linear model object in R. Note: it seems R automatically applies dummy variables for the classification ones.
+ins_model <- lm(charges ~ ., data = insurance)
+
+# Checking the angular coefficients and significance levels.
+summary(ins_model)
+
+# Adding a quadratic factor for age to the equation
+insurance$age2 <- insurance$age ^ 2
+
+# Converting BMI to a binary variable
+insurance$bmi30 <- ifelse(insurance$bmi >= 30, 1, 0)
+
+# USEFUL NOTE: a*b operator is a shorthand for a + b + a:b
+# Now, add the previous modifications together for the new model
+ins_model2 <- lm(charges ~ age + age2 + children + bmi + sex + bmi30*smoker + region, data = insurance)
+
+# Checking the angular coefficients and significance levels for the new model
+summary(ins_model2)
+```

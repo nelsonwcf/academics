@@ -1,0 +1,73 @@
+---
+title: "Homework 1 - Data Exploration"
+author: "Nelson Corrocher"
+date: "March 14, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("D:/Dropbox/Harrisburg/ANLY530 - Machine Learning I/Online Class 1")
+```
+
+## Homework
+
+1. Machine Learning with R - Lantz: Review chapter 2 and understand how to use the R tools described
+
+2. Complete the following problems from the Kelleher book (Chapter 3):
++ 5
++ 8
++ 10
+
+### Exercise 5
+
+```{r ex5}
+ex5data = data.frame(cbind(c(1:20),c(42,47,59,27,84,49,72,43,73,59,58,82,50,79,89,75,70,59,67,35)))
+colnames(ex5data) <- c("ID","Score")
+
+# Declaring function to be used
+normalize <- function(x, low, high) {
+  return ((x - min(x)) / (max(x) - min(x)) * (high - low) + low)
+}
+standardize <- function(x) {
+  return ((x - mean(x)) / sd(x)) # That is the definition of the R function 'scale()', which could also be used
+}
+
+# Range normalization (0,1)
+normalize(ex5data$Score, 0, 1)
+
+# Range normalization (-1,1)
+normalize(ex5data$Score, -1, 1)
+
+# Standardization
+standardize(ex5data$Score)
+```
+
+### Exercise 8
+```{r ex8}
+ex8data <- read.csv("EX8Table.csv")
+
+# Calculate the correlation between the LIFEEXPECTANCY and INFANT-MORTALITY features
+cor(x = ex8data$LIFE_EXPECTANCY, y = ex8data$INFANT_MORTALITY)
+
+```
+
+b. Discuss the relationships between the features in the dataset that this scatter plot highlights.
++ Life Expectancy and Infant Mortality, as expected, are have a very high negative linear relationship.
++ Health and Health USD have high direct linear relationship, again as expected since the features are related.
++ Infant Mortality have a negative exponential relationship with Health/Health USD. Life Expectancy, on the other hand, have a exponential relationship with Health/Health USD, which is expected since Life Expectancy and Infant Mortality are highly negatively correlated.
++ Education correlation is more blurry but also have correlation with the other variables.
++ In summary, by looking at the matrix, we can see that the correlation between the variables are in the order of |0.5| or greater so all them seems to be somewhat correlated, directly or inversely. 
+
+### Exercise 10
+
+Discuss the relationships shown in each of the visualizations below:
+
+a. Continuous feature DIA. B.P. and the target feature, TACHYCARDIA.
+In patients without high Tachycardia risk, the diastolic blood pressure seems to be normally distributed around 80-85, while in high risk patients, the DIA B.P. seems unimodal skewed to the right (suggesting they tend to have higher DIA B.P. as well). This implicates that Techycardia and DIA B.P. have some relation. 
+
+b. Continuous HEIGHT feature and the target feature TACHYCARDIA.
+People with high Tachycardia risk seems to be shorter than those of low risk. This can be seems by looking at the main graph and the Tachycardia = true graph, which skewes the graph sligthly to the right. This may indicate, again, some relation between those two variables.
+
+c. Categorical feature PREV. TACHY. and the target feature, TACHYCARDIA.
+We can see that the proportion of false/true in the stacked bar plot is significantly different from each other (looking at the two rightmost bars). This suggests a relationship between PREV. TACHY. and high risk of TACHYCARDIA.
