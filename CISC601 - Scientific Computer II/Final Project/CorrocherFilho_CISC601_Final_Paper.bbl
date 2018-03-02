@@ -1,0 +1,151 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Berk%
+\ \BBA {} DeMarzo%
+}{%
+Berk%
+\ \BBA {} DeMarzo%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+berk2014corporate}
+\APACinsertmetastar {%
+berk2014corporate}%
+\begin{APACrefauthors}%
+Berk, J\BPBI B.%
+\BCBT {}\ \BBA {} DeMarzo, P\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2013}.
+\newblock
+\APACrefbtitle {Corporate Finance} {Corporate finance}\ (\PrintOrdinal{3rd}\
+  \BEd).
+\newblock
+\APACaddressPublisher{Boston}{Pearson}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {https://finance.yahoo.com/quote/BZF/}}{%
+\APACcitebtitle {https://finance.yahoo.com/quote/BZF/}}{%
+{\protect \APACyear {2017}}%
+}]{%
+bzf_s}
+\APACinsertmetastar {%
+bzf_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://finance.yahoo.com/quote/BZF/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {https://finance.yahoo.com/quote/GOOG/}}{%
+\APACcitebtitle {https://finance.yahoo.com/quote/GOOG/}}{%
+{\protect \APACyear {2017}}%
+}]{%
+goog_s}
+\APACinsertmetastar {%
+goog_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://finance.yahoo.com/quote/GOOG/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {https://finance.yahoo.com/quote/VFINX}}{%
+\APACcitebtitle {https://finance.yahoo.com/quote/VFINX}}{%
+{\protect \APACyear {2017}}%
+}]{%
+vfinx_s}
+\APACinsertmetastar {%
+vfinx_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://finance.yahoo.com/quote/VFINX} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {https://finance.yahoo.com/quote/VNQ}}{%
+\APACcitebtitle {https://finance.yahoo.com/quote/VNQ}}{%
+{\protect \APACyear {2017}}%
+}]{%
+reit_s}
+\APACinsertmetastar {%
+reit_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://finance.yahoo.com/quote/VNQ} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {https://www.treasury.gov/}}{%
+\APACcitebtitle {https://www.treasury.gov/}}{%
+{\protect \APACyear {2017}}%
+}]{%
+riskfree_s}
+\APACinsertmetastar {%
+riskfree_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://www.treasury.gov/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {http://www.fedprimerate.com/crude-oil-price-history.htm}}{%
+\APACcitebtitle {http://www.fedprimerate.com/crude-oil-price-history.htm}}{%
+{\protect \APACyear {2017}}%
+}]{%
+crude_s}
+\APACinsertmetastar {%
+crude_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.fedprimerate.com/crude-oil-price-history.htm}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {http://www.indexmundi.com/commodities/?commodity=gold}}{%
+\APACcitebtitle {http://www.indexmundi.com/commodities/?commodity=gold}}{%
+{\protect \APACyear {2017}}%
+}]{%
+gold_s}
+\APACinsertmetastar {%
+gold_s}%
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\begin{APACrefURL} \url{http://www.indexmundi.com/commodities/?commodity=gold}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lasdon%
+, Fox%
+\BCBL {}\ \BBA {} Ratner%
+}{%
+Lasdon%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1974}}%
+}]{%
+lasdon_fox_ratner_1974}
+\APACinsertmetastar {%
+lasdon_fox_ratner_1974}%
+\begin{APACrefauthors}%
+Lasdon, L.%
+, Fox, R.%
+\BCBL {}\ \BBA {} Ratner, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1974}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Nonlinear optimization using the generalized reduced
+  gradient method} {Nonlinear optimization using the generalized reduced
+  gradient method}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{RAIRO}{3}{}{73-104}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

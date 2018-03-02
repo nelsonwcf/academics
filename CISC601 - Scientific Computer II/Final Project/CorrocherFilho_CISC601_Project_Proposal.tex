@@ -1,0 +1,26 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+
+%opening
+\title{Project Proposal}
+\author{Nelson Corrocher}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\section{Proposal}
+\paragraph{}Since my background is in finance, I propose the use of nonlinear programing to optimize of a financial portfolio using the concept of Sharpe-Ratio. The Sharpe-Ratio measures the adjusted risk-return of a portfolio composed of many financial products. It is adjusted by the proportions of each asset in a way to minimize the risk through diversification, while maximizing return. It is defined by:\\
+\begin{align*}
+Sharpe-Ratio = \frac{(r_p - r_f)}{\alpha_p}
+\end{align*}
+where $r_p$ is the portofio return, $r_f$ the risk-free rate and $\alpha_p$ the portfolio standard deviation.
+\paragraph{}The goal would be to get the right proportions for an hypothetical portfolio composed of different assets (stocks, debt, savings, indexes, etc.), each one with its own risks and returns. A key point of this project is that risk, in finance, is measured by variance and total variance can be reduced by the combination of different time-return uncorrelated assets. This is called portfolio diversification, in financial terms. \\
+\paragraph{}Methodology: collect financial assets from different classes through Internet sites, as most asset returns are freely available. Some of them may need to be collected from Bloomberg terminal, specially for private funds. With this data, average return and standard deviation for each product is calculated, in addition to the correlation matrix between all financial products. Finally, these inputs will be used to calculate the coefficients (multiplied by the proportions) of the Sharpe-Ratio. The optimization will adjust the proportions to maximize the ratio, optimizing the portfolio.
+The optimal proportions minimizes the risk while maximizing the return, and thus, maximizing the Share-Ratio of the portfolio. \\
+\paragraph{}Since this is a non-linear constrained optimization problem, the tool selected for solving the problem is excel, which already contains a good implementation of the \textit{Generalized Reduced Gradient} or \textit{GRG} algorithm.
+\paragraph{}NOTE: This is the initial proposal. After moving forward, some new information may come out and some changes may be made to the proposal. For example, hedge funds are an important asset class that would be valuable to include but their data availability is restricted. If its return data can't be collected, the asset will be excluded from the research.
+\end{document}

@@ -1,0 +1,27 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics[width=0.8\textwidth]{basic_stat.png}
+\caption{\label{fig:figure 1}Basic statistics from investment products}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics[width=0.8\textwidth]{correl_matrix.png}
+\caption{\label{fig:figure 2}Correlation matrix between rate of returns of investment products}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics[width=0.8\textwidth]{results.png}
+\caption{\label{fig:figure 3}Results found by the GRG2 algorithm}
+\end{figure*}
+\efloatseparator
+ 

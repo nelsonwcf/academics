@@ -1,0 +1,909 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6400) (preloaded format=xelatex 2017.9.19)  29 SEP 2017 11:58
+entering extended mode
+**./CorrocherFilho_CISC601_Final_Paper.tex
+(CorrocherFilho_CISC601_Final_Paper.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 73 language(s) loaded.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\apa6\ap
+a6.cls"
+Document Class: apa6 2017/06/20 v2.32 APA formatting (6th edition)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ar
+ticle.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\si
+ze12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\apacite
+\apacite.sty"
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count87
+\bibleftmargin=\skip43
+\bibindent=\skip44
+\bibparsep=\skip45
+\bibitemsep=\skip46
+\biblabelsep=\skip47
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\
+natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count88
+)
+LaTeX Info: Redefining \BBA on input line 213.
+Class apa6 Info: The selected bibliography package, apacite and natbib, have be
+en loaded on input line 213.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\lmod
+ern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fo
+ntenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1
+enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lm
+r.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometr
+y\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberd
+iek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberd
+iek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxet
+ex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\xelatex\xetex
+config\geometry.cfg"))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s-def\xetex.def"
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktab
+s\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen113
+\lightrulewidth=\dimen114
+\cmidrulewidth=\dimen115
+\belowrulesep=\dimen116
+\belowbottomsep=\dimen117
+\aboverulesep=\dimen118
+\abovetopsep=\dimen119
+\cmidrulesep=\dimen120
+\cmidrulekern=\dimen121
+\defaultaddspace=\dimen122
+\@cmidla=\count92
+\@cmidlb=\count93
+\@aboverulesep=\dimen123
+\@belowrulesep=\dimen124
+\@thisruleclass=\count94
+\@lastruleclass=\count95
+\@thisrulewidth=\dimen125
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\threepa
+rttable\threeparttable.sty"
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box26
+)
+\b@level@one@skip=\skip50
+\e@level@one@skip=\skip51
+\b@level@two@skip=\skip52
+\e@level@two@skip=\skip53
+\b@level@three@skip=\skip54
+\e@level@three@skip=\skip55
+\b@level@four@skip=\skip56
+\e@level@four@skip=\skip57
+\b@level@five@skip=\skip58
+\e@level@five@skip=\skip59
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption
+\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption
+\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
+)
+\c@ContinuedFloat=\count96
+Package caption Info: threeparttable package is loaded.
+)
+\c@APAenum=\count97
+\@text@par@indent=\skip60
+\gr@box=\box27
+\gr@boxwidth=\skip61
+\gr@boxheight=\skip62
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\b
+m.sty"
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+\c@appendix=\count98
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhd
+r\fancyhdr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip63
+\f@nch@O@elh=\skip64
+\f@nch@O@erh=\skip65
+\f@nch@O@olh=\skip66
+\f@nch@O@orh=\skip67
+\f@nch@O@elf=\skip68
+\f@nch@O@erf=\skip69
+\f@nch@O@olf=\skip70
+\f@nch@O@orf=\skip71
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\endfloa
+t\endfloat.sty"
+Package: endfloat 2011/12/25 v2.5d LaTeX2e package puts figures and tables at e
+nd (jdm)
+\c@posttable=\count99
+\efloat@postttt=\write3
+\@ef@tttopen=\count100
+\c@postfigure=\count101
+\efloat@postfff=\write4
+\@ef@fffopen=\count102
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbo
+x\etoolbox.sty"
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count103
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel
+\babel.sty"
+Package: babel 2017/06/29 3.12 The Babel package
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel
+\switch.def"
+File: switch.def 2017/06/29 3.12 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\b
+blopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-e
+nglish\english.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel
+\babel.def"
+File: babel.def 2017/06/29 3.12 Babel common definitions
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel
+\switch.def"
+File: switch.def 2017/06/29 3.12 Babel switching mechanism
+)
+\babel@savecnt=\count104
+\U@D=\dimen133
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel
+\xebabel.def")
+\bbl@dirlevel=\count105
+)
+\l@american = a dialect from \language\l@english 
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\in
+putenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath
+\amsmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip72
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath
+\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath
+\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen134
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath
+\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
+\pmbraise@=\dimen135
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath
+\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen136
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip10
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks19
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks20
+\eqnshift@=\dimen137
+\alignsep@=\dimen138
+\tagshift@=\dimen139
+\tagwidth@=\dimen140
+\totwidth@=\dimen141
+\lineht@=\dimen142
+\@envbody=\toks21
+\multlinegap=\skip73
+\multlinetaggap=\skip74
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\todonot
+es\todonotes.sty"
+Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\if
+then.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval
+\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyv
+al\xkeyval.tex"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyv
+al\xkvutils.tex"
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+)
+\XKV@depth=\count118
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\
+xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\fro
+ntendlayer\tikz.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\bas
+iclayer\pgf.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\uti
+lities\pgfrcs.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfutil-common.tex"
+\pgfutil@everybye=\toks25
+\pgfutil@tempdima=\dimen143
+\pgfutil@tempdimb=\dimen144
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfutil-common-lists.tex"))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfutil-latex.def"
+\pgfutil@abb=\box30
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\ever
+yshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfrcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\bas
+iclayer\pgfcore.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\sys
+temlayer\pgfsys.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsys.code.tex"
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks28
+))
+\pgf@x=\dimen145
+\pgf@y=\dimen146
+\pgf@xa=\dimen147
+\pgf@ya=\dimen148
+\pgf@xb=\dimen149
+\pgf@yb=\dimen150
+\pgf@xc=\dimen151
+\pgf@yc=\dimen152
+\w@pgf@writea=\write5
+\r@pgf@reada=\read1
+\c@pgf@counta=\count119
+\c@pgf@countb=\count120
+\c@pgf@countc=\count121
+\c@pgf@countd=\count122
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsys-xetex.def"
+File: pgfsys-xetex.def 2014/07/09  (rcs-revision 1.11)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsys-dvipdfmx.def"
+File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)
+\pgfsys@objnum=\count123
+)))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count124
+\pgfsyssoftpath@bigbuffer@items=\count125
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\s
+ystemlayer\pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmath.code.tex"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathcalc.code.tex"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathutil.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen153
+\pgfmath@count=\count126
+\pgfmath@box=\box31
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.code.tex"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.basic.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.trigonometric.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.random.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.comparison.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.base.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.round.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.misc.code.tex")
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfunctions.integerarithmetics.code.tex")))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count127
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen154
+\pgf@picmaxx=\dimen155
+\pgf@picminy=\dimen156
+\pgf@picmaxy=\dimen157
+\pgf@pathminx=\dimen158
+\pgf@pathmaxx=\dimen159
+\pgf@pathminy=\dimen160
+\pgf@pathmaxy=\dimen161
+\pgf@xx=\dimen162
+\pgf@xy=\dimen163
+\pgf@yx=\dimen164
+\pgf@yy=\dimen165
+\pgf@zx=\dimen166
+\pgf@zy=\dimen167
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen168
+\pgf@path@lasty=\dimen169
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen170
+\pgf@shorten@start@additional=\dimen171
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count128
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen172
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen173
+\pgf@pt@y=\dimen174
+\pgf@pt@temp=\dimen175
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen176
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen177
+\pgf@sys@shading@range@num=\count129
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box35
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\b
+asiclayer\pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+odules\pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box36
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+odules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\com
+patibility\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen178
+\pgf@nodesepend=\dimen179
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\com
+patibility\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\uti
+lities\pgffor.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\uti
+lities\pgfkeys.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgfkeys.code.tex"))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\mat
+h\pgfmath.sty"
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmath.code.tex"))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\u
+tilities\pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+ath\pgfmath.code.tex")
+\pgffor@iter=\dimen180
+\pgffor@skip=\dimen181
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
+))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\f
+rontendlayer\tikz\tikz.code.tex"
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\l
+ibraries\pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count130
+\pgfplotmarksize=\dimen182
+)
+\tikz@lastx=\dimen183
+\tikz@lasty=\dimen184
+\tikz@lastxsaved=\dimen185
+\tikz@lastysaved=\dimen186
+\tikzleveldistance=\dimen187
+\tikzsiblingdistance=\dimen188
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count131
+\tikznumberofchildren=\count132
+\tikznumberofcurrentchild=\count133
+\tikz@fig@count=\count134
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\m
+odules\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count135
+\pgfmatrixcurrentcolumn=\count136
+\pgf@matrix@numberofcolumns=\count137
+)
+\tikz@expandcount=\count138
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\f
+rontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\f
+rontendlayer\tikz\libraries\tikzlibrarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\c
+alc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count139
+\calc@Bcount=\count140
+\calc@Adimen=\dimen189
+\calc@Bdimen=\dimen190
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count141
+\calc@Cskip=\skip77
+)
+\c@@todonotes@numberoftodonotes=\count142
+) (CorrocherFilho_CISC601_Final_Paper.aux)
+\openout1 = `CorrocherFilho_CISC601_Final_Paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+\c@maskedRefs=\count143
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\apacite
+\english.apc"
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=15.2pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\apa6\co
+nfig\APAamerican.txt"
+File: APAamerican.txt 2012/02/23 v1.25 apa6 configuration for American English
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ ABD: EveryShipout initializing macros
+Class apa6 Info: Keywords not defined on input line 18.
+ [1
+
+] [2]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 25.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1l
+mr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 25.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omll
+mm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 25.
+
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omsl
+msy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 25.
+
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxl
+mex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 25.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 25.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 25.
+ [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 47.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omsl
+mr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 47.
+ [5
+
+] [6]
+
+Class apa6 Warning: \bibliographystyle command ignored on input line 79.
+
+(CorrocherFilho_CISC601_Final_Paper.bbl [7]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 39.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lm
+tt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\openout4 = `CorrocherFilho_CISC601_Final_Paper.fff'.
+
+ (CorrocherFilho_CISC601_Final_Paper.fff)
+AED endfloat: Processing end Figures and Tables [8
+
+]
+(CorrocherFilho_CISC601_Final_Paper.fff
+File: basic_stat.png Graphic file (type bmp)
+<basic_stat.png>
+ [9
+
+
+]
+File: correl_matrix.png Graphic file (type bmp)
+<correl_matrix.png>
+ [10
+
+]
+File: results.png Graphic file (type bmp)
+<results.png>
+ [11
+
+])
+(CorrocherFilho_CISC601_Final_Paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 15948 strings out of 427856
+ 294624 string characters out of 3146815
+ 363436 words of memory out of 3000000
+ 19602 multiletter control sequences out of 15000+200000
+ 42032 words of font info for 40 fonts, out of 3000000 for 9000
+ 1314 hyphenation exceptions out of 8191
+ 62i,12n,56p,1350b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on CorrocherFilho_CISC601_Final_Paper.pdf (11 pages).

@@ -1,0 +1,12 @@
+Exercise 13.6:
+
+By running the three different algorithms on the same equation it was possible to see the performance difference in the algorithms.
+Using the parameters provided by the book, parabolic interpolation had the least iterations, only 6, 22 from golden-ratio and also 6 from Newton. 
+However, they can't be directly compared because the initial values were different. Parabolic interpolation however, even under the same brackets
+as golden-ratio, it still uses only 7 iterations. Newton method, since it used only one initial value, it can't be directly compared.
+
+Exercise 13.10:
+
+While the exercise only asked to calculate the minimum by finding the root of diferentiated f, I tried to compare with the golden-ratio over the negative f and
+the performance of the bisection was superior when using brackets of the same size (bisection 17 vs golden-ratio 23).
+
