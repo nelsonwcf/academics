@@ -1,0 +1,75 @@
+---
+title: "Assignment 7"
+author: "Nelson Corrocher"
+date: "January 16, 2017"
+output: html_document
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE, message = FALSE}
+setwd("C:/Users/corrocherfilhonw/Dropbox/Harrisburg/ANLY510/Week 10")
+knitr::opts_chunk$set(echo = TRUE)
+options(digits = 2)
+is.installed <- function(mypkg) {
+  is.element(mypkg, installed.packages()[, 1])
+}
+
+if(!is.installed("survival")) {
+  install.packages("survival")
+}
+
+if(!is.installed("coin")) {
+  install.packages("coin")
+}
+
+if(!is.installed("TH.data")) {
+  install.packages("coin")
+}
+
+
+library("survival")
+library("coin")
+library("TH.data")
+data(glioma)
+data(GBSG2)
+```
+
+# Initial analysis of the "glioma" dataset
+
+```{r summary}
+summary(glioma)
+head(glioma)
+table(glioma$time)
+table(subset(glioma, group=="Control", select = time))
+table(subset(glioma, group=="RIT", select = time))
+```
+
+# Part 1
+
+```{r part1}
+survo <- Surv(time = glioma$time, event=glioma$event)
+summary(survo)
+survf1 <- survfit(formula = survo ~ glioma$sex, data = glioma)
+summary(survf1)
+plot(survf1, lty=1:2, log = T, main = "Glioma", ylab="Probability", xlab="Survival Time")
+```
+
+# Part 2
+
+```{r part2}
+survf2 <- survfit(formula = survo ~ glioma$histology, data = glioma)
+summary(survf2)
+plot(survf2, lty=1:2, log = T, main = "Glioma", ylab="Probability", xlab="Survival Time")
+```
+
+# Part 3
+
+```{r part3}
+summary(GBSG2)
+head(GBSG2)
+survg <- Surv(time = GBSG2$time, event=GBSG2$cens)
+summary(survg)
+survf3 <- survfit(formula = survg ~ GBSG2$horTh, data = GBSG2)
+summary(survf3)
+plot(survf3, lty=1:2, log = T, main = "GBSG2", ylab="Probability", xlab="Survival Time")
+```

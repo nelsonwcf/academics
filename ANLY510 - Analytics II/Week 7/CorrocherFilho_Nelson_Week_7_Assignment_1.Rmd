@@ -1,0 +1,117 @@
+---
+title: "San Francisco Bay Guardian Paper Text Mining"
+author: "Nelson Corrocher"
+date: "August 21, 2016"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- This section install the required packages -->
+```{r needed_packages, echo = FALSE, include = FALSE}
+Needed <- c("tm", "SnowballCC", "RColorBrewer", "ggplot2", "wordcloud", "biclust", "cluster", "igraph", "fpc") 
+install.packages(Needed, dependencies=TRUE, repos = "http://datacube.wu.ac.at/")   
+install.packages("Rcampdf", repos = "http://datacube.wu.ac.at/", type = "source") 
+```
+
+#### The following section prepare the corpus of the text mining. In this exercise, the folder texts/ is being used so the text object must be put in that folder.
+```{r prep_env, echo = FALSE}
+setwd("C:/Users/corrocherfilhonw/workspace/R/Week 7") # <<<< Set your working environment here
+cname <- file.path(getwd(), "texts")
+cname
+dir(cname)
+library(tm) # tm is the text mining package
+docs <- Corpus(DirSource(cname)) # Set up the Corpus on docs
+```
+
+#### The following section pre-process the words (removes punctuation and number, convert to lwoercase, remove stopwords, extract the word stem and remove whitepsaces).
+```{r text_pproc}
+docs <- tm_map(docs, removePunctuation)   # *Removing punctuation:*    
+docs <- tm_map(docs, removeNumbers)      # *Removing numbers:*    
+docs <- tm_map(docs, tolower)   # *Converting to lowercase:*    
+docs <- tm_map(docs, removeWords, stopwords("english"))   # *Removing "stopwords" 
+library(SnowballC)   
+docs <- tm_map(docs, stemDocument)   # *Removing common word endings* (e.g., "ing", "es")   
+docs <- tm_map(docs, stripWhitespace)   # *Stripping whitespace   
+docs <- tm_map(docs, PlainTextDocument)
+```
+
+#### Staging the Data (as Document-Term Matrix)
+```{r staging}
+dtm <- DocumentTermMatrix(docs) 
+tdm <- TermDocumentMatrix(docs)
+```
+
+#### The following section is used for some data familiarization and to catch evident outliers:
+```{r explor}
+freq <- colSums(as.matrix(dtm))   
+length(freq)   
+ord <- order(freq)   
+m <- as.matrix(dtm)   
+dim(m)   
+write.csv(m, file="DocumentTermMatrix.csv") # The excel file in the working directory now holds word counting
+```
+
+#### Some cleaning up of the data below. The output shows two rows of numbers. The top number is the frequency with which words appear and the bottom number reflects how many words appear that frequently:
+```{r clean}
+#  Start by removing sparse terms:   
+dtms <- removeSparseTerms(dtm, 0.1) # This makes a matrix that is 10% empty space, maximum.   
+head(table(freq), 20) ### Word Frequency 
+tail(table(freq), 20)
+```
+
+#### Next, let's consider only biggest frequencies (in this example, 42):
+```{r top_freq}
+freq <- colSums(as.matrix(dtms))  # Matrix is too big to be shown on this document
+f_list <- findFreqTerms(dtm, lowfreq=30)   # <<<< Change it to the most appropriate for the data
+f_list
+```
+
+#### Ploting Word Frequencies (Only words that appear at least 50 times):
+```{r plot, echo = FALSE}
+library(ggplot2)   
+wf <- data.frame(word=names(freq), freq=freq)   
+p <- ggplot(subset(wf, freq>50), aes(word, freq))    
+p <- p + geom_bar(stat="identity", colour = "white", fill = "dark red")   
+p <- p + theme(axis.text.x=element_text(angle=45, hjust=1))   
+p
+```
+
+#### Next, we can try to find the correlation between terms that occurs in the corpus. In this context, correlation is a quantitative measure of the co-occurrence of words in documents. In this example we use the words "san" and "francisco"
+```{r correl_test}
+findAssocs(dtm, c("san","francisco") ,corlimit = 0.6) # <<<< Adjust the corlimit to the desired correlation level.Obs: Since there is only one document, nothing will be shown.
+#findAssocs(dtm, f_list ,corlimit = 0.6) <<<<< Alternatively, we can use the list of words that had frequencies greater than 30, which were put in the F_LIST variable
+```
+
+#### Here we create a word cloud based on the frequency of the words. 
+```{r clouds, echo = FALSE}
+library(wordcloud)   
+dtms <- removeSparseTerms(dtm, 0.15) # Prepare the data (max 15% empty space)   
+freq <- colSums(as.matrix(dtm)) # Find word frequencies   
+dark2 <- brewer.pal(6, "Dark2")   
+wordcloud(names(freq), freq, max.words=100, rot.per=0.2, colors=dark2)    
+```
+
+#### The code below draws a tree diagram of the cluster. 
+```{r clust_eucl}
+dtms <- removeSparseTerms(dtm, 0.15) # This makes a matrix that is only 15% empty space.
+library(cluster)   
+d <- dist(t(dtms), method="euclidian")   # First calculate distance between words
+fit <- hclust(d=d, method="ward.D")   
+plot.new()
+plot(fit, hang=-1)
+groups <- cutree(fit, k=5)   # "k=" defines the number of clusters you are using   
+rect.hclust(fit, k=5, border="red") # draw dendogram with red borders around the 5 clusters   
+```
+
+#### The code below should clusterize the corpus using k-means algorithms. For some reason, the code either takes too long or get into an infinite loop. For the sake of this exercise, it was commented out.
+```{r k-means}
+#library(fpc)   
+#library(cluster)  
+#dtms <- removeSparseTerms(dtm, 0.15) # Prepare the data (max 15% empty space)   
+#d <- dist(t(dtms), method="euclidian")   
+#kfit <- kmeans(d, 2)   
+#clusplot(as.matrix(d), kfit$cluster, color=T, shade=T, labels=2, lines=0)
+```

@@ -1,0 +1,613 @@
+\documentclass[english,man]{apa6}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Table formatting
+\usepackage{longtable, booktabs}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+\newenvironment{ltable}
+  {\begin{landscape}\begin{center}\begin{threeparttable}}
+  {\end{threeparttable}\end{center}\end{landscape}}
+
+\newenvironment{lltable}
+  {\begin{landscape}\begin{center}\begin{ThreePartTable}}
+  {\end{ThreePartTable}\end{center}\end{landscape}}
+
+\usepackage{ifthen} % Only add declarations when endfloat package is loaded
+\ifthenelse{\equal{\string man}{\string man}}{%
+ \DeclareDelayedFloatFlavor{ThreePartTable}{table} % Make endfloat play with longtable
+ \DeclareDelayedFloatFlavor{ltable}{table} % Make endfloat play with lscape
+ \DeclareDelayedFloatFlavor{lltable}{table} % Make endfloat play with lscape & longtable
+}{}%
+
+
+% The following enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand\getlongtablewidth{%
+ \begingroup
+  \ifcsname LT@\roman{LT@tables}\endcsname
+  \global\longtablewidth=0pt
+  \renewcommand\LT@entry[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}%
+  \@nameuse{LT@\roman{LT@tables}}%
+  \fi
+\endgroup}
+
+
+  \usepackage{graphicx}
+  \makeatletter
+  \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+  \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+  \makeatother
+  % Scale images if necessary, so that they will not overflow the page
+  % margins by default, and it is still possible to overwrite the defaults
+  % using explicit options in \includegraphics[width, height, ...]{}
+  \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            pdfauthor={},
+            pdftitle={Options Straddle Simulations - Effects of Financial Reports on Straddle Strategies},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{}
+\else
+  \usepackage[english]{babel}
+\fi
+
+% Manuscript styling
+\captionsetup{font=singlespacing,justification=justified}
+\usepackage{csquotes}
+\usepackage{upgreek}
+
+
+
+\usepackage{tikz} % Variable definition to generate author note
+
+% fix for \tightlist problem in pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Essential manuscript parts
+  \title{Options Straddle Simulations - Effects of Financial Reports on Straddle
+Strategies}
+
+  \shorttitle{STRADDLE SIMULATIONS USING FINANCIAL REPORTS DATES}
+
+
+  \author{Nelson Corrocher~\& Sergii Savchuk}
+
+  \def\affdep{{"", ""}}%
+  \def\affcity{{"", ""}}%
+
+  \affiliation{
+    \vspace{0.5cm}
+          \textsuperscript{} Harrisburg University  }
+
+  \authornote{
+    \newcounter{author}
+    Nelson Corrocher, M.B.A.
+
+                      Correspondence concerning this article should be addressed to Nelson Corrocher. E-mail: \href{mailto:ncorrocher@my.harrisburgu.edu}{\nolinkurl{ncorrocher@my.harrisburgu.edu}}
+                          }
+
+
+  \abstract{This paper continues the analysis of the differences between stock price
+variation that occurs regularly and the variation that happens close to
+10-Q and 10-K filing dates. After concluding that the variance of
+blue-chips stock prices is indeed higher in the D-2 to D+2 on the
+financial report release dates, the next step will be to collect stock
+options prices from release date to M+3 months after the release date
+and use this information to simulate what profits could be achieved if a
+straddle was used close to the release date of the financial report.}
+  \keywords{straddle options financial reports price variance simulation
+black-scholes \\
+
+    \indent Word count: 137
+  }
+
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\setcounter{secnumdepth}{0}
+
+
+
+\textbf{Note}: the SETWD function in the block above sets the working
+directory and should be set to the folder where the inputs and outputs
+would be located.
+
+During a trading simulation in a graduate investment class at Boston
+University in 2014, the winning strategy used an option straddle close
+to the release date of the 10-K of a certain public company. This
+outcome started a discussion of using a systematic creation of straddles
+close to filing dates of companies. In the context of financial
+investment, a straddle is a neutral option strategy involving the
+simultaneous buying of a put and a call of the same underlying stock,
+expecting a great price variation before the option expiration date.
+Creating an option straddle close to the filing date of the financial
+statement from publicly traded companies has been used by fund managers
+to try to improve their funds returns. However, since they use
+additional and often undisclosed criteria to decide whose company's
+stocks they straddle, there is neither evidence that the variance is
+indeed greater close to financial report filing dates, nor that the
+strategy, by itself, is profitable. This research is a continuation of
+the previous paper in which Blue Chip stock variance were calculated in
+what we called \enquote{Regular}" days and \enquote{Release} days (days
+in which Financial Statements are released in the market, defined, for
+this research, as D - 2 to D + 2 with D being the day of the release).
+In the previous research, it was found that in Blue Chip stocks, the
+variance was different, and the difference could be seen at the
+superposed distributions especially on the tails. This difference
+suggests a potential strategy using straddles and such analysis is the
+goal of this paper. From a higher perspective, the steps for this
+project involve collecting historical options data and creating a
+straddle strategy in the respective stock close to the days the
+financial statement is going to be released and estimate the returns on
+such a stragey. However, due to restrictions in the availability of
+historical options price data, the feasibility of the strategy itself
+won't be validated in this paper. Only the methodology will be
+presented.
+
+\section{Methods}\label{methods}
+
+\subsection{Participants}\label{participants}
+
+No direct participants were involved in this research as the main inputs
+for the analysis were financial market data that are publicly available.
+
+\subsection{Measures and Procedures}\label{measures-and-procedures}
+
+This entire paper has been constructed almost entirely by using R
+scripting (exception for Inflation Daily Rates, explained below). For
+replicability purposes, the methodology is going to be explained through
+the commented script, enabling the reader to change it for his own
+needs. There were some unexpected difficulties during the study due the
+fact that historical option prices is not freely available. This
+restricted the ability to run collect updated data automatically and
+reduced the scope of the script. Now, while the methodology will be
+provided in a replicable way, it will be applied only to a sample of the
+data, which won't be enough to validate the options strategy. The code
+below is used to prepare the environment for the script.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{list.of.packages <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"xlsx"}\NormalTok{, }\StringTok{"data.table"}\NormalTok{)}
+\NormalTok{for(i in list.of.packages) \{}
+  \NormalTok{if(!}\KeywordTok{is.installed}\NormalTok{(i)) \{}
+  \KeywordTok{install.packages}\NormalTok{(i)}
+  \NormalTok{\}}
+\NormalTok{\}}
+\KeywordTok{library}\NormalTok{(data.table)}
+\KeywordTok{library}\NormalTok{(xlsx)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+As mentioned above, it won't be possible to automate the collection of
+the data like was done in the previous paper. Instead, we will focus of
+the treatment of the data once the data has been collected and put in
+the working directory. The data used in this document has been pruchased
+from the Chicago Board Options Exchange (CBOE) and uses its format. In
+this example, we are going to use the ticker \enquote{IBM} since it is
+the one that has historical options data. The code below comes mostly
+from the previous paper and it is deeply explained there.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stocks <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"IBM"}\NormalTok{,}\StringTok{"INTERNATIONAL BUSINESS MACHINES CORP"}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(stocks) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ticker"}\NormalTok{, }\StringTok{"company"}\NormalTok{)}
+
+\NormalTok{firstRun =}\StringTok{ }\OtherTok{TRUE}
+\NormalTok{for (t in stocks$ticker) \{}
+  \NormalTok{URL <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"http://chart.finance.yahoo.com/table.csv?s="}\NormalTok{,t,}\StringTok{"&a=8&b=1&c=2011&d=7&e=31&f=2016&g=d&ignore=.csv"}\NormalTok{,}\DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+  \NormalTok{tmp <-}\StringTok{ }\KeywordTok{fread}\NormalTok{(URL, }\DataTypeTok{drop =} \KeywordTok{c}\NormalTok{(}\StringTok{"Open"}\NormalTok{, }\StringTok{"High"}\NormalTok{, }\StringTok{"Low"}\NormalTok{, }\StringTok{"Close"}\NormalTok{, }\StringTok{"Volume"}\NormalTok{))}
+  \NormalTok{tmp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(tmp, t, }\DecValTok{0}\NormalTok{)}
+  \KeywordTok{colnames}\NormalTok{(tmp) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"date"}\NormalTok{, }\StringTok{"price"}\NormalTok{, }\StringTok{"ticker"}\NormalTok{, }\StringTok{"flag"}\NormalTok{)}
+  \NormalTok{if (firstRun ==}\StringTok{ }\OtherTok{TRUE}\NormalTok{) \{}
+    \NormalTok{historicalPrices <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(tmp)}
+    \NormalTok{firstRun <-}\StringTok{ }\OtherTok{FALSE}
+  \NormalTok{\} else}
+    \NormalTok{historicalPrices <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(historicalPrices, tmp)}
+\NormalTok{\}}
+
+\KeywordTok{rm}\NormalTok{(tmp)}
+\KeywordTok{rm}\NormalTok{(firstRun)}
+\KeywordTok{rm}\NormalTok{(t)}
+\KeywordTok{rm}\NormalTok{(URL)}
+
+\NormalTok{historicalPrices <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(historicalPrices, date >=}\StringTok{ "2011/09/01"} \NormalTok{&}\StringTok{ }\NormalTok{date <=}\StringTok{ "2016/07/31"} \NormalTok{&}\StringTok{ }\NormalTok{!}\KeywordTok{is.na}\NormalTok{(ticker))}
+\NormalTok{historicalPrices$ticker <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(historicalPrices$ticker)}
+\NormalTok{historicalPrices$flag <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(historicalPrices$flag)}
+
+\NormalTok{firstRun <-}\StringTok{ }\OtherTok{TRUE}
+\NormalTok{for (i in }\DecValTok{2011}\NormalTok{:}\DecValTok{2016}\NormalTok{) \{}
+  \NormalTok{for (j in }\DecValTok{1}\NormalTok{:}\DecValTok{4}\NormalTok{) \{}
+    \NormalTok{if (!(i ==}\StringTok{ }\DecValTok{2016} \NormalTok{&}\StringTok{ }\NormalTok{j ==}\StringTok{ }\DecValTok{4}\NormalTok{)) \{}
+      \NormalTok{URL <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"ftp://ftp.sec.gov/edgar/full-index/"}\NormalTok{, i,}\StringTok{"/QTR"}\NormalTok{,j,}\StringTok{"/master.zip"}\NormalTok{,}\DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+      \NormalTok{FNC <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"master_QTR"}\NormalTok{, j, }\StringTok{"_"}\NormalTok{, i, }\StringTok{".zip"}\NormalTok{, }\DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+      \NormalTok{FNU <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"master_QTR"}\NormalTok{, j, }\StringTok{"_"}\NormalTok{, i, }\StringTok{".idx"}\NormalTok{, }\DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+      \NormalTok{if (!}\KeywordTok{file.exists}\NormalTok{(FNC))}
+        \KeywordTok{download.file}\NormalTok{(URL, FNC, }\DataTypeTok{method =} \StringTok{"libcurl"}\NormalTok{)}
+      \KeywordTok{unzip}\NormalTok{(FNC, }\StringTok{"master.idx"}\NormalTok{)}
+      \KeywordTok{file.rename}\NormalTok{(}\StringTok{"master.idx"}\NormalTok{, FNU)}
+      \NormalTok{if (firstRun ==}\StringTok{ }\OtherTok{TRUE}\NormalTok{) \{}
+        \NormalTok{filingDates <-}\StringTok{ }\KeywordTok{fread}\NormalTok{(FNU)}
+        \NormalTok{filingDates <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(filingDates, V3 ==}\StringTok{ "10-K"} \NormalTok{|}\StringTok{ }\NormalTok{V3 ==}\StringTok{ "10-Q"}\NormalTok{)}
+        \NormalTok{firstRun <-}\StringTok{ }\OtherTok{FALSE}
+      \NormalTok{\} else \{}
+        \NormalTok{tmp <-}\StringTok{ }\KeywordTok{fread}\NormalTok{(FNU)}
+        \NormalTok{tmp <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(tmp, V3 ==}\StringTok{ "10-K"} \NormalTok{|}\StringTok{ }\NormalTok{V3 ==}\StringTok{ "10-Q"}\NormalTok{)}
+        \NormalTok{filingDates <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(filingDates, tmp)}
+      \NormalTok{\}}
+    \NormalTok{\}}
+  \NormalTok{\}}
+\NormalTok{\}}
+
+\KeywordTok{colnames}\NormalTok{(filingDates) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"CIK"}\NormalTok{,}\StringTok{"company"}\NormalTok{,}\StringTok{"filing"}\NormalTok{,}\StringTok{"date"}\NormalTok{,}\StringTok{"location"}\NormalTok{)}
+\KeywordTok{rm}\NormalTok{(i)}
+\KeywordTok{rm}\NormalTok{(j)}
+\KeywordTok{rm}\NormalTok{(URL)}
+\KeywordTok{rm}\NormalTok{(firstRun)}
+\KeywordTok{rm}\NormalTok{(tmp)}
+
+\NormalTok{for (n in }\DecValTok{1}\NormalTok{:}\KeywordTok{nrow}\NormalTok{(stocks)) \{}
+  \NormalTok{tmp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{subset}\NormalTok{(filingDates, company %like%}\StringTok{ }\NormalTok{stocks$company[n]),stocks$ticker[n])}
+  \NormalTok{if (!}\KeywordTok{exists}\NormalTok{(}\StringTok{"relevantFilings"}\NormalTok{))}
+    \NormalTok{relevantFilings <-}\StringTok{ }\NormalTok{tmp}
+  \NormalTok{else}
+    \NormalTok{relevantFilings <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(relevantFilings, tmp)}
+\NormalTok{\}}
+\NormalTok{relevantFilings <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(relevantFilings$date, }\StringTok{"%Y-%m-%d"}\NormalTok{), relevantFilings$stocks.ticker.n.,}\DecValTok{1}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(relevantFilings) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"date"}\NormalTok{, }\StringTok{"ticker"}\NormalTok{, }\StringTok{"flag"}\NormalTok{)}
+\NormalTok{PriceChanges <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(historicalPrices$date,}\StringTok{"%Y-%m-%d"}\NormalTok{), historicalPrices$ticker, historicalPrices$price)}
+\KeywordTok{colnames}\NormalTok{(PriceChanges) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"date"}\NormalTok{, }\StringTok{"ticker"}\NormalTok{, }\StringTok{"price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\emph{Note} BUG: This block will hang the script when SEC.GOV ftp site
+is down. An alternative is to have the required files already in the
+working directory as it will make the script skip the download portion.
+
+The following stores the options price for calls and puts on the
+selected date (\emph{note}: this step is necessary due to not having the
+data for all dates and other stocks. The code below can easily be
+expanded to include the entire dataset if avaible).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fdate <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\StringTok{"2013-04-29"}\NormalTok{, }\StringTok{"%Y-%m-%d"}\NormalTok{)}
+\NormalTok{fdprev <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\StringTok{"2013-04-26"}\NormalTok{, }\StringTok{"%Y-%m-%d"}\NormalTok{)}
+\NormalTok{fdnext <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\StringTok{"2013-05-02"}\NormalTok{, }\StringTok{"%Y-%m-%d"}\NormalTok{)}
+\NormalTok{price <-}\StringTok{ }\NormalTok{PriceChanges$price[PriceChanges$date ==}\StringTok{ }\NormalTok{fdate]}
+\NormalTok{prv <-}\StringTok{ }\KeywordTok{fread}\NormalTok{(}\StringTok{"UnderlyingOptionsEODQuotes_2013-04-26.csv"}\NormalTok{, }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"strike"}\NormalTok{, }\StringTok{"expiration"}\NormalTok{, }\StringTok{"option_type"}\NormalTok{, }\StringTok{"bid_1545"}\NormalTok{, }\StringTok{"ask_1545"}\NormalTok{))}
+\NormalTok{nxt <-}\StringTok{ }\KeywordTok{fread}\NormalTok{(}\StringTok{"UnderlyingOptionsEODQuotes_2013-05-02.csv"}\NormalTok{, }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"strike"}\NormalTok{, }\StringTok{"expiration"}\NormalTok{, }\StringTok{"option_type"}\NormalTok{, }\StringTok{"bid_1545"}\NormalTok{, }\StringTok{"ask_1545"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+With the correct range selected, we can now create a straddle and
+measure it's returns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{strikeList <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{unique}\NormalTok{(prv$strike))}
+\NormalTok{lp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(strikeList, }\KeywordTok{abs}\NormalTok{(price -}\StringTok{ }\NormalTok{strikeList))}
+\KeywordTok{colnames}\NormalTok{(lp) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"strike"}\NormalTok{,}\StringTok{"dist"}\NormalTok{)}
+\NormalTok{strikePrice <-}\StringTok{ }\NormalTok{lp$strike[lp$dist ==}\StringTok{ }\KeywordTok{min}\NormalTok{(lp$dist)]}
+
+\CommentTok{# Cost is the sum of a call and a put in the prv variable, which is days before the filing releases}
+\NormalTok{cost <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(prv, strike ==}\StringTok{ }\NormalTok{strikePrice &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ "2013-05-03"} \NormalTok{&}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "C"}\NormalTok{)$ask_1545 +}\StringTok{ }\KeywordTok{subset}\NormalTok{(prv, strike ==}\StringTok{ }\NormalTok{strikePrice &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ "2013-05-03"} \NormalTok{&}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "P"}\NormalTok{)$ask_1545}
+
+\NormalTok{rev <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(nxt, strike ==}\StringTok{ }\NormalTok{strikePrice &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ "2013-05-03"} \NormalTok{&}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "C"}\NormalTok{)$bid_1545 +}\StringTok{ }\KeywordTok{subset}\NormalTok{(nxt, strike ==}\StringTok{ }\NormalTok{strikePrice &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ "2013-05-03"} \NormalTok{&}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "P"}\NormalTok{)$bid_1545}
+
+\NormalTok{rev -}\StringTok{ }\NormalTok{cost}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7.3
+\end{verbatim}
+
+Now, let's try do this for all strike prices and all expiration dates
+(greater than the current date)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{firstTime <-}\StringTok{ }\OtherTok{TRUE}
+
+\NormalTok{for (s in }\KeywordTok{unique}\NormalTok{(nxt$strike)) \{}
+  \NormalTok{for (exp in }\KeywordTok{unique}\NormalTok{(nxt$expiration)) \{}
+    \NormalTok{cost <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(prv, strike ==}\StringTok{ }\NormalTok{s &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ }\NormalTok{exp &}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "C"}\NormalTok{)$ask_1545 +}\StringTok{ }\KeywordTok{subset}\NormalTok{(prv, strike ==}\StringTok{ }\NormalTok{s &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ }\NormalTok{exp &}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "P"}\NormalTok{)$ask_1545}
+    
+    \NormalTok{rev <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(nxt, strike ==}\StringTok{ }\NormalTok{s &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ }\NormalTok{exp &}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "C"}\NormalTok{)$bid_1545 +}\StringTok{ }\KeywordTok{subset}\NormalTok{(nxt, strike ==}\StringTok{ }\NormalTok{s &}\StringTok{ }\NormalTok{expiration ==}\StringTok{ }\NormalTok{exp &}\StringTok{ }\NormalTok{option_type ==}\StringTok{ "P"}\NormalTok{)$bid_1545}
+    
+    \NormalTok{if (}\KeywordTok{length}\NormalTok{((rev -}\StringTok{ }\NormalTok{cost)) ==}\StringTok{ }\DecValTok{0}\NormalTok{)}
+      \NormalTok{profit =}\StringTok{ }\DecValTok{0}
+    \NormalTok{else}
+      \NormalTok{profit =}\StringTok{ }\NormalTok{rev -}\StringTok{ }\NormalTok{cost}
+    
+    \NormalTok{if (firstTime ==}\StringTok{ }\OtherTok{TRUE}\NormalTok{) \{}
+      \NormalTok{firstTime <-}\StringTok{ }\OtherTok{FALSE}
+      \NormalTok{results <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(exp,s,profit)}
+    \NormalTok{\} else \{}
+      \NormalTok{tmp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(exp,s,profit)}
+      \NormalTok{results <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(results,tmp)}
+    \NormalTok{\}}
+  \NormalTok{\}}
+\NormalTok{\}}
+\KeywordTok{colnames}\NormalTok{(results) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"expiration_date"}\NormalTok{,}\StringTok{"strike_price"}\NormalTok{,}\StringTok{"profit"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Results}\label{results}
+
+In the above block we got all the results in the results vector. To
+avoid making this document huge we are skipping plotting the table and
+most of the results can be seen by the end of the document when subsets
+of the data are plotted (3-variable table with negative some negative
+values in profits, this bubble charts can't be used - solution was to
+plot subsets of the data).
+
+In summary, using the data sample we can see that the profitability
+increases when the strike prices are very close to the current
+underlying stock price and with options with strike price close to or
+below the current stock price. Unfortunately, this can't prove or
+disprove any strategy due to the lack of freely available data.
+Discussion will comment more on this.
+
+\section{Dicussion}\label{dicussion}
+
+The initial goal of this paper was to measure the returns on a
+systematic stock options strategy using straddles. However, one
+unexpected problem showed in the middle stages of the paper: the
+non-availability of public historical options price data. For this
+reason, this paper had to be reduced in scope, to the test of the just
+one sample available. Even though this sample shows promising returns in
+the sample, it is by no means proof that it would work for other stocks.
+
+Assuming that this data becomes available in the future, the scripts
+written in this paper can easily be extended to include a large dataset.
+Other tests also becomes feasible, like matching black-scholles pricing
+to the current pricing, seasonaility control, outlier removal and so on.
+
+\newpage
+
+\section{References}\label{references}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:unnamed-chunk-2}Plotting with fixed expiration date of
+2013-05-03}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-3-1.pdf}
+\caption{\label{fig:unnamed-chunk-3}Plotting with fixed expiration date of
+2013-06-22}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-4-1.pdf}
+\caption{\label{fig:unnamed-chunk-4}Plotting with fixed expiration date of
+2013-07-20}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-5-1.pdf}
+\caption{\label{fig:unnamed-chunk-5}Plotting with fixed strike price at 160}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-6-1.pdf}
+\caption{\label{fig:unnamed-chunk-6}Plotting with fixed strike price at 190}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{CorrocherFilho_Nelson_Project_Proposal_files/figure-latex/unnamed-chunk-7-1.pdf}
+\caption{\label{fig:unnamed-chunk-7}Plotting with fixed strike price at 210}
+\end{figure}
+
+\section{Session Info}\label{session-info}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sessionInfo}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## R version 3.3.2 (2016-10-31)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 10586)
+## 
+## locale:
+## [1] LC_COLLATE=English_United States.1252 
+## [2] LC_CTYPE=English_United States.1252   
+## [3] LC_MONETARY=English_United States.1252
+## [4] LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.1252    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] ggplot2_2.2.0     xlsx_0.5.7        xlsxjars_0.6.1    rJava_0.9-8      
+## [5] data.table_1.10.0 papaja_0.1.0.9456
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.8      knitr_1.15.1     magrittr_1.5     munsell_0.4.3   
+##  [5] colorspace_1.3-1 highr_0.6        stringr_1.1.0    plyr_1.8.4      
+##  [9] tools_3.3.2      grid_3.3.2       gtable_0.2.0     htmltools_0.3.5 
+## [13] assertthat_0.1   yaml_2.1.14      lazyeval_0.2.0   rprojroot_1.1   
+## [17] digest_0.6.10    tibble_1.2       bookdown_0.3     evaluate_0.10   
+## [21] rmarkdown_1.2    stringi_1.1.2    scales_0.4.1     backports_1.0.4
+\end{verbatim}
+
+\setlength{\parindent}{-0.5in} \setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\hypertarget{ref-R-papaja}{}
+Aust, F., \& Barth, M. (2016). \emph{Papaja: Create apa manuscripts with
+rmarkdown}. Retrieved from \url{https://github.com/crsh/papaja}
+
+\hypertarget{ref-berkdemarzo}{}
+Berk, P. M., Jonathan BDeMarzo. (n.d.). \emph{Corporate finance}.
+
+\hypertarget{ref-bodie}{}
+Bodie, Z., Kane, A., \& Marcus, A. J. (n.d.). \emph{Investments}.
+
+\hypertarget{ref-R-data.table}{}
+Dowle, M., Srinivasan, A., Short, T., R Saporta, S. L. with
+contributions from, \& Antonyan, E. (2015). \emph{Data.table: Extension
+of data.frame}. Retrieved from
+\url{https://CRAN.R-project.org/package=data.table}
+
+\hypertarget{ref-R-xlsx}{}
+Dragulescu, A. A. (2014a). \emph{Xlsx: Read, write, format excel 2007
+and excel 97/2000/xp/2003 files}. Retrieved from
+\url{https://CRAN.R-project.org/package=xlsx}
+
+\hypertarget{ref-R-xlsxjars}{}
+Dragulescu, A. A. (2014b). \emph{Xlsxjars: Package required poi jars for
+the xlsx package}. Retrieved from
+\url{https://CRAN.R-project.org/package=xlsxjars}
+
+\hypertarget{ref-straddle}{}
+Investopedia. (2003). \emph{Straddle definition}. Retrieved from
+\url{http://www.investopedia.com/terms/s/straddle.asp}
+
+\hypertarget{ref-CBOE}{}
+\emph{Options, equity \& etf - tick \& trade data -- cboe livevol data
+shop}. (2017). Retrieved from \url{https://datashop.cboe.com/}
+
+\hypertarget{ref-R-base}{}
+R Core Team. (2016). \emph{R: A language and environment for statistical
+computing}. Vienna, Austria: R Foundation for Statistical Computing.
+Retrieved from \url{https://www.R-project.org/}
+
+\hypertarget{ref-sec_1}{}
+Sec.gov \textbar{} company search page\_2016. (2016). \emph{Sec.gov}.
+Retrieved from
+\url{https://www.sec.gov/edgar/searchedgar/companysearch.html}
+
+\hypertarget{ref-sec_2}{}
+Sec.org \textbar{} information for ftp users - 2016. (2016).
+\emph{Sec.gov}. Retrieved from
+\url{https://www.sec.gov/edgar/searchedgar/ftpusers.htm}
+
+\hypertarget{ref-R-rJava}{}
+Urbanek, S. (2016). \emph{RJava: Low-level r to java interface}.
+Retrieved from \url{https://CRAN.R-project.org/package=rJava}
+
+\hypertarget{ref-R-ggplot2}{}
+Wickham, H. (2009). \emph{Ggplot2: Elegant graphics for data analysis}.
+Springer-Verlag New York. Retrieved from \url{http://ggplot2.org}
+
+\hypertarget{ref-yahoo_1}{}
+Yahoo finance - business finance, stock market, quotes, news\_2016.
+(2016). \emph{Finance.yahoo.com}. Retrieved from
+\url{http://finance.yahoo.com/}
+
+
+
+
+
+
+\end{document}

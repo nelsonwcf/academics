@@ -1,0 +1,285 @@
+---
+title: "Options Straddle Simulations - Effects of Financial Reports on Straddle Strategies "
+shorttitle: "STRADDLE SIMULATIONS USING FINANCIAL REPORTS DATES"
+author: 
+  - name: Nelson Corrocher
+    affiliation: 
+    corresponding: yes    # Define only one corresponding author
+    address: 
+    email: ncorrocher@my.harrisburgu.edu
+  - name: Sergii Savchuk
+affiliation:
+  - id: 
+    institution: Harrisburg University
+
+abstract:
+  This paper continues the analysis of the differences between stock price variation that occurs regularly and the variation that happens close to 10-Q and 10-K filing dates. After concluding that the variance of blue-chips stock prices is indeed higher in the D-2 to D+2 on the financial report release dates, the next step will be to collect stock options prices from release date to M+3 months after the release date and use this information to simulate what profits could be achieved if a straddle was used close to the release date of the financial report.  
+
+author_note:  |
+  | Nelson Corrocher, M.B.A.
+
+keywords: "straddle options financial reports price variance simulation black-scholes"
+
+wordcount: 137
+
+class: man
+lang: english
+figsintext: no
+figurelist: no
+tablelist: no
+lineno: no
+bibliography:
+  - r-references.bib
+
+output: papaja::apa6_pdf
+fig_caption: yes
+nocite: '@*'
+---
+
+```{r message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(warning=FALSE)
+options(digits = 2)
+is.installed <-
+  function(mypkg) {
+  is.element(mypkg, installed.packages()[, 1])
+  } 
+#setwd("C:/Users/corrocherfilhonw/Dropbox/Harrisburg/ANLY510/Project")
+setwd("D:/Dropbox/Harrisburg/ANLY510/Project")
+if(!is.installed("papaja")) {
+  install.packages("devtools")
+  devtools::install_github("crsh/papaja")
+  }
+
+library("papaja")
+```
+
+**Note**: the SETWD function in the block above sets the working directory and should be set to the folder where the inputs and outputs would be located.
+
+  During a trading simulation in a graduate investment class at Boston University in 2014, the winning strategy used an option straddle close to the release date of the 10-K of a certain public company. This outcome started a discussion of using a systematic creation of straddles close to filing dates of companies.
+  In the context of financial investment, a straddle is a neutral option strategy involving the simultaneous buying of a put and a call of the same underlying stock, expecting a great price variation before the option expiration date. Creating an option straddle close to the filing date of the financial statement from publicly traded companies has been used by fund managers to try to improve their funds returns. However, since they use additional and often undisclosed criteria to decide whose company's stocks they straddle, there is neither evidence that the variance is indeed greater close to financial report filing dates, nor that the strategy, by itself, is profitable. 
+  This research is a continuation of the previous paper in which Blue Chip stock variance were calculated in what we called "Regular"" days and "Release" days (days in which Financial Statements are released in the market, defined, for this research, as D - 2 to D + 2 with D being the day of the release). In the previous research, it was found that in Blue Chip stocks, the variance was different, and the difference could be seen at the superposed distributions especially on the tails. This difference suggests a potential strategy using straddles and such analysis is the goal of this paper. 
+  From a higher perspective, the steps for this project involve collecting historical options data and creating a straddle strategy in the respective stock close to the days the financial statement is going to be released and estimate the returns on such a stragey. However, due to restrictions in the availability of historical options price data, the feasibility of the strategy itself won't be validated in this paper. Only the methodology will be presented.
+  
+# Methods
+
+## Participants
+
+  No direct participants were involved in this research as the main inputs for the analysis were financial market data that are publicly available. 
+  
+## Measures and Procedures
+
+  This entire paper has been constructed almost entirely by using R scripting (exception for Inflation Daily Rates, explained below). For replicability purposes, the methodology is going to be explained through the commented script, enabling the reader to change it for his own needs.
+  There were some unexpected difficulties during the study due the fact that historical option prices is not freely available. This restricted the ability to run collect updated data automatically and reduced the scope of the script. Now, while the methodology will be provided in a replicable way, it will be applied only to a sample of the data, which won't be enough to validate the options strategy. 
+  The code below is used to prepare the environment for the script. 
+
+```{r setup, echo = TRUE}
+list.of.packages <- c("ggplot2", "xlsx", "data.table")
+for(i in list.of.packages) {
+  if(!is.installed(i)) {
+  install.packages(i)
+  }
+}
+library(data.table)
+library(xlsx)
+library(ggplot2)
+```
+
+  As mentioned above, it won't be possible to automate the collection of the data like was done in the previous paper. Instead, we will focus of the treatment of the data once the data has been collected and put in the working directory. The data used in this document has been pruchased from the Chicago Board Options Exchange (CBOE) and uses its format.
+  In this example, we are going to use the ticker "IBM" since it is the one that has historical options data. The code below comes mostly from the previous paper and it is deeply explained there. 
+  
+```{r stocks, echo = TRUE}
+stocks <- data.frame("IBM","INTERNATIONAL BUSINESS MACHINES CORP")
+colnames(stocks) <- c("ticker", "company")
+
+firstRun = TRUE
+for (t in stocks$ticker) {
+  URL <- paste("http://chart.finance.yahoo.com/table.csv?s=",t,"&a=8&b=1&c=2011&d=7&e=31&f=2016&g=d&ignore=.csv",sep = "")
+  tmp <- fread(URL, drop = c("Open", "High", "Low", "Close", "Volume"))
+  tmp <- data.frame(tmp, t, 0)
+  colnames(tmp) <- c("date", "price", "ticker", "flag")
+  if (firstRun == TRUE) {
+    historicalPrices <- data.frame(tmp)
+    firstRun <- FALSE
+  } else
+    historicalPrices <- rbind(historicalPrices, tmp)
+}
+
+rm(tmp)
+rm(firstRun)
+rm(t)
+rm(URL)
+
+historicalPrices <- subset(historicalPrices, date >= "2011/09/01" & date <= "2016/07/31" & !is.na(ticker))
+historicalPrices$ticker <- as.character(historicalPrices$ticker)
+historicalPrices$flag <- as.character(historicalPrices$flag)
+
+firstRun <- TRUE
+for (i in 2011:2016) {
+  for (j in 1:4) {
+    if (!(i == 2016 & j == 4)) {
+      URL <- paste("ftp://ftp.sec.gov/edgar/full-index/", i,"/QTR",j,"/master.zip",sep = "")
+      FNC <- paste("master_QTR", j, "_", i, ".zip", sep = "")
+      FNU <- paste("master_QTR", j, "_", i, ".idx", sep = "")
+      if (!file.exists(FNC))
+        download.file(URL, FNC, method = "libcurl")
+      unzip(FNC, "master.idx")
+      file.rename("master.idx", FNU)
+      if (firstRun == TRUE) {
+        filingDates <- fread(FNU)
+        filingDates <- subset(filingDates, V3 == "10-K" | V3 == "10-Q")
+        firstRun <- FALSE
+      } else {
+        tmp <- fread(FNU)
+        tmp <- subset(tmp, V3 == "10-K" | V3 == "10-Q")
+        filingDates <- rbind(filingDates, tmp)
+      }
+    }
+  }
+}
+
+colnames(filingDates) <- c("CIK","company","filing","date","location")
+rm(i)
+rm(j)
+rm(URL)
+rm(firstRun)
+rm(tmp)
+
+for (n in 1:nrow(stocks)) {
+  tmp <- data.frame(subset(filingDates, company %like% stocks$company[n]),stocks$ticker[n])
+  if (!exists("relevantFilings"))
+    relevantFilings <- tmp
+  else
+    relevantFilings <- rbind(relevantFilings, tmp)
+}
+relevantFilings <- data.frame(as.Date(relevantFilings$date, "%Y-%m-%d"), relevantFilings$stocks.ticker.n.,1)
+colnames(relevantFilings) <- c("date", "ticker", "flag")
+PriceChanges <- data.frame(as.Date(historicalPrices$date,"%Y-%m-%d"), historicalPrices$ticker, historicalPrices$price)
+colnames(PriceChanges) <- c("date", "ticker", "price")
+```
+
+*Note* BUG: This block will hang the script when SEC.GOV ftp site is down. An alternative is to have the required files already in the working directory as it will make the script skip the download portion.
+
+The following stores the options price for calls and puts on the selected date (*note*: this step is necessary due to not having the data for all dates and other stocks. The code below can easily be expanded to include the entire dataset if avaible).
+
+```{r options, echo = TRUE}
+fdate <- as.Date("2013-04-29", "%Y-%m-%d")
+fdprev <- as.Date("2013-04-26", "%Y-%m-%d")
+fdnext <- as.Date("2013-05-02", "%Y-%m-%d")
+price <- PriceChanges$price[PriceChanges$date == fdate]
+prv <- fread("UnderlyingOptionsEODQuotes_2013-04-26.csv", select = c("strike", "expiration", "option_type", "bid_1545", "ask_1545"))
+nxt <- fread("UnderlyingOptionsEODQuotes_2013-05-02.csv", select = c("strike", "expiration", "option_type", "bid_1545", "ask_1545"))
+```
+
+With the correct range selected, we can now create a straddle and measure it's returns. 
+
+```{r straddle, echo = TRUE}
+strikeList <- sort(unique(prv$strike))
+lp <- data.frame(strikeList, abs(price - strikeList))
+colnames(lp) <- c("strike","dist")
+strikePrice <- lp$strike[lp$dist == min(lp$dist)]
+
+# Cost is the sum of a call and a put in the prv variable, which is days before the filing releases
+cost <- subset(prv, strike == strikePrice & expiration == "2013-05-03" & option_type == "C")$ask_1545 + subset(prv, strike == strikePrice & expiration == "2013-05-03" & option_type == "P")$ask_1545
+
+rev <- subset(nxt, strike == strikePrice & expiration == "2013-05-03" & option_type == "C")$bid_1545 + subset(nxt, strike == strikePrice & expiration == "2013-05-03" & option_type == "P")$bid_1545
+
+rev - cost
+```
+
+Now, let's try do this for all strike prices and all expiration dates (greater than the current date)
+
+```{r straddlecycle, echo = TRUE}
+firstTime <- TRUE
+
+for (s in unique(nxt$strike)) {
+  for (exp in unique(nxt$expiration)) {
+    cost <- subset(prv, strike == s & expiration == exp & option_type == "C")$ask_1545 + subset(prv, strike == s & expiration == exp & option_type == "P")$ask_1545
+    
+    rev <- subset(nxt, strike == s & expiration == exp & option_type == "C")$bid_1545 + subset(nxt, strike == s & expiration == exp & option_type == "P")$bid_1545
+    
+    if (length((rev - cost)) == 0)
+      profit = 0
+    else
+      profit = rev - cost
+    
+    if (firstTime == TRUE) {
+      firstTime <- FALSE
+      results <- data.frame(exp,s,profit)
+    } else {
+      tmp <- data.frame(exp,s,profit)
+      results <- rbind(results,tmp)
+    }
+  }
+}
+colnames(results) <- c("expiration_date","strike_price","profit")
+```
+
+# Results
+
+In the above block we got all the results in the results vector. To avoid making this document huge we are skipping plotting the table and most of the results can be seen by the end of the document when subsets of the data are plotted (3-variable table with negative some negative values in profits, this bubble charts can't be used - solution was to plot subsets of the data).
+
+In summary, using the data sample we can see that the profitability increases when the strike prices are very close to the current underlying stock price and with options with strike price close to or below the current stock price. Unfortunately, this can't prove or disprove any strategy due to the lack of freely available data. Discussion will comment more on this.
+
+# Dicussion
+
+The initial goal of this paper was to measure the returns on a systematic stock options strategy using straddles. However, one unexpected problem showed in the middle stages of the paper: the non-availability of public historical options price data. For this reason, this paper had to be reduced in scope, to the test of the just one sample available. Even though this sample shows promising returns in the sample, it is by no means proof that it would work for other stocks. 
+
+Assuming that this data becomes available in the future, the scripts written in this paper can easily be extended to include a large dataset. Other tests also becomes feasible, like matching black-scholles pricing to the current pricing, seasonaility control, outlier removal and so on.
+
+\newpage
+
+# References
+
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+```{r fig.cap = "Plotting with fixed expiration date of 2013-05-03", echo = FALSE }
+exp <- "2013-05-03"
+tmp <- subset(results, results$expiration_date == exp)
+tmp$expiration_date <- NULL
+plot(tmp)
+```
+
+```{r fig.cap = "Plotting with fixed expiration date of 2013-06-22", echo = FALSE }
+exp <- "2013-06-22"
+tmp <- subset(results, results$expiration_date == exp)
+tmp$expiration_date <- NULL
+plot(tmp)
+```
+
+```{r fig.cap = "Plotting with fixed expiration date of 2013-07-20", echo = FALSE }
+exp <- "2013-07-20"
+tmp <- subset(results, results$expiration_date == exp)
+tmp$expiration_date <- NULL
+plot(tmp)
+```
+
+```{r fig.cap = "Plotting with fixed strike price at 160", echo = FALSE }
+strike <- 160
+tmp <- subset(results, results$strike_price == strike)
+tmp$strike_price <- NULL
+plot(tmp)
+```
+
+```{r fig.cap = "Plotting with fixed strike price at 190", echo = FALSE }
+strike <- 190
+tmp <- subset(results, results$strike_price == strike)
+tmp$strike_price <- NULL
+plot(tmp)
+```
+
+```{r fig.cap = "Plotting with fixed strike price at 210", echo = FALSE }
+strike <- 210
+tmp <- subset(results, results$strike_price == strike)
+tmp$strike_price <- NULL
+plot(tmp)
+```
+
+# Session Info
+
+```{r session, echo = TRUE}
+sessionInfo()
+```
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}

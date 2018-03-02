@@ -1,0 +1,59 @@
+---
+title: "Assignment 4"
+author: "Nelson Corrocher"
+date: "December 4, 2016"
+output: html_document
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE, message = FALSE}
+setwd("D:/Dropbox/Harrisburg/ANLY510/Week5")
+knitr::opts_chunk$set(echo = TRUE)
+options(digits = 2)
+is.installed <- function(mypkg) {
+  is.element(mypkg, installed.packages()[, 1])
+}
+
+if(!is.installed("arules")) {
+  install.packages("arules")
+}
+library("arules")
+```
+
+## Part 1
+
+```{r part1,message = FALSE, echo = FALSE }
+fn <- "retail.dat"
+URL <- "http://fimi.ua.ac.be/data/retail.dat"
+
+if (!file.exists(fn)) {
+download.file(URL,
+fn,
+method = "auto",
+cacheOK = FALSE)
+}
+grd <- read.transactions(fn, format = "basket")
+itemFrequencyPlot(grd, support = .1)
+itemFrequencyPlot(grd, support = .2)
+itemFrequencyPlot(grd, support = .3)
+itemFrequencyPlot(grd, support = .5)
+summary(grd)
+# inspect(grd) - Line remove to make RMarkdown generated file small
+grdar <- apriori(grd, parameter = list(supp = .05, conf = .5))
+rules <- sort(grdar, decreasing = TRUE, by =  "confidence")
+inspect(rules) 
+```
+
+## Part 2
+
+Some notable rules are: the one with highest confidence is product 39 with basket of 41 and 48. The two-items combo that seems be most related is of products 39 and 48. One interesting results is that products 32 and 39 had a lift below 1.00, which could imply they are inversely associated (the appear together less than what would be expected if they were independent).
+
+## Part 3
+
+The next steps from here would depend on the goal. For example, were I working for a big retailer trying to improve the product location, one step would be to use the support and confidence to better relocate SKUs (stock keeping units) to different places in in the store like putting associated SKUs in both ends of the same shelf. Knowing the customers would likely walk from one end to the other, products placed in the middle of the shelf would have more assured visibility, which could be used to place a third associated SKU with higher margin at that location.
+
+In the case the retailer had different format stores, for example, a smaller one located in the train station, it could be an option to add virtual items using customers' information to basket to look for ways to improve the product assortment at the location (makes sense since the public who goes to the regular retail stores are not the same or don't have the same goals as the ones who shop quickly at a train station).
+
+Using association analysis in conjunction with multivariate regressions, it could be possible to estimate the price of a SKU that would maximize profits (if the price is higher than the optimal, volume will decrease faster revenue increase; if price is lower, revenue would grow but the profit margin decreases faster).
+
+Another possible use would be in healthcare. In many cases, patients getting one treatment will need complimentary treatments depending on their age group, ethnicity or gender. Adding these variables as virtual items could bring new information about services usage, reducing asymetric information between patient and the insurance company and thus, leading to more accurate charged insurance premiums.
