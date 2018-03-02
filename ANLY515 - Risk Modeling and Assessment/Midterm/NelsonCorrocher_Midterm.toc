@@ -1,0 +1,13 @@
+\contentsline {section}{Problem \#1}{3}{section*.2}
+\contentsline {subsection}{(a)}{3}{section*.3}
+\contentsline {subsection}{(b)}{3}{section*.4}
+\contentsline {section}{Problem \#2}{4}{section*.5}
+\contentsline {subsection}{(a)}{5}{section*.6}
+\contentsline {subsection}{(b)}{6}{section*.7}
+\contentsline {subsection}{(c)}{7}{section*.8}
+\contentsline {section}{Problem \#3}{8}{section*.9}
+\contentsline {section}{Problem \#4}{9}{section*.10}
+\contentsline {subsection}{(a)}{9}{section*.11}
+\contentsline {subsection}{(b)}{10}{section*.12}
+\contentsline {subsection}{(c)}{10}{section*.13}
+\contentsline {subsection}{(d)}{11}{section*.14}

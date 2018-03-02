@@ -1,0 +1,190 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9) (preloaded format=xelatex 2016.7.22)  18 SEP 2017 09:45
+entering extended mode
+**./Final_Project.tex
+(Final_Project.tex
+LaTeX2e <2016/03/31> patch level 2
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ar
+ticle.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\si
+ze10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhd
+r\fancyhdr.sty"
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lastpag
+e\lastpage.sty"
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhd
+r\extramarks.sty"
+\@temptokenb=\toks14
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\graphics.sty"
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00mikte
+x\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphic
+s-def\xetex.def"
+File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
+JK)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lipsum\
+lipsum.sty"
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count87
+)
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\l
+ongtable.sty"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip52
+\LTright=\skip53
+\LTpre=\skip54
+\LTpost=\skip55
+\LTchunksize=\count88
+\LTcapwidth=\dimen105
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count89
+\LT@rows=\count90
+\c@LT@tables=\count91
+\c@LT@chunks=\count92
+\LT@p@ftn=\toks16
+)
+\c@homeworkProblemCounter=\count93
+ (Final_Project.aux)
+\openout1 = `Final_Project.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 128.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 130.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 130.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 130.
+ [1
+
+] (Final_Project.toc)
+\tf@toc=\write3
+\openout3 = `Final_Project.toc'.
+
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 153.
+
+
+("C:\Users\corrocherfilhonw\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\om
+scmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 153.
+ [3]
+File: Image1.jpg Graphic file (type QTm)
+ <use  "Image1.jpg" > [4
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 203.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 203.
+ [5]
+File: Main_Scenario.jpg Graphic file (type QTm)
+ <use  "Main_Scenario.jpg" > [6]
+File: Scenario_2.jpg Graphic file (type QTm)
+
+<use  "Scenario_2.jpg" > [7]
+File: Scenario_3.jpg Graphic file (type QTm)
+ <use  "Scenario_3.jpg" > [8
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+
+Overfull \hbox (40.24608pt too wide) in paragraph at lines 314--315
+ [] \OT1/cmr/m/n/10 Card-player.com. (2017). Texas Hold'em Odds Cal-cu-la-tor. 
+[on-line] Avail-able at: http://www.cardplayer.com/poker-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+AED: lastpage setting LastPage
+[9] (Final_Project.aux) ) 
+Here is how much of TeX's memory you used:
+ 1153 strings out of 428408
+ 13711 string characters out of 3154704
+ 176065 words of memory out of 3000000
+ 4579 multiletter control sequences out of 15000+200000
+ 8848 words of font info for 31 fonts, out of 3000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 25i,10n,43p,903b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on Final_Project.pdf (9 pages).
