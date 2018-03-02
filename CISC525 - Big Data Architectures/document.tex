@@ -1,0 +1,38 @@
+\documentclass[11pt, a4paper]{article}
+\title{CISC 525-90-2016 - Assignment 4}
+\author{Nelson Corrocher}
+\date{July 2016}
+\begin{document}
+\maketitle
+\section{What do we mean by a NoSQL database?}
+\paragraph{}A NoSQL, which gained popularity in the context of distributed systems, provides a mechanism for storage and retrieval of data which is modelled in means other than the tabular relations used in Relational Database System(RDBS). In contrast to RDBS, NoSQL databases compromise consistency (ACID transactions) in favor of availability, partition tolerance and speed.
+\paragraph{}NoSQL databases are not substitutes for RDBS; some problems are better suited to be solved in RDBS while others in NoSQL.
+
+\section{What are the types of NoSQL databases?}  
+\paragraph{}\textbf{Key-Value databases:} store are the simplest form of a NoSQL database. As the name implies, data is stored in the form of a key and an associated value. The values in a key value store can be a single item of data, or can be a more complex structure, sometimes referred to as an aggregate.
+\paragraph{}\textbf{Document databases:} store a key and a document, which can be a complex data structure similar to an aggregate.  The main difference between a document store and a key value store with a complex value is that in a document store, the database system has visibility into the values in the document and can query over those values.  Partial returns are possible, rather than the full aggregate return in a key value store.
+\paragraph{}\textbf{Columnar databases:} (also known as Wide Column Store) provide a more structured approach to data storage. The data store is characterized as a multi-dimensional sorted map indexed by a row key, a column key, and a time-stamp. Groups of columns are stored as column families, and these families are physically stored for efficient retrieval. Although column family data stores have the constructs of tables and columns, the schema is not fixed each row in a table can have entirely different columns from every other row.
+\paragraph{}\textbf{Graph databases:} use graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in most cases retrieved with a single operation. Graph databases by design allow simple and rapid retrieval of complex hierarchical structures that are difficult to model in relational systems.
+\paragraph{}\textbf{Multi-model databases:} are designed to support multiple data models (like the ones mentioned above) under a single integrated back-end.
+
+\section{Some people in the industry interpret NoSQL to mean "Not Only SQL".  Why do you suppose that is?}
+\paragraph{}To emphasize that they may support SQL-like query languages, but it is not the only supported method of storing and retrieving data.
+
+
+
+\begin{thebibliography}{1}
+\bibitem{NoSQL}NoSQL. (2016). Wikipedia. Retrieved 24 July 2016, from https://en.wikipedia.org/wiki/NoSQL
+\bibitem{NoSQLGraph}Graph database. (2016). Wikipedia. Retrieved 24 July 2016, from https://en.wikipedia.org/wiki/Graph\_database
+\bibitem{grimm}Grimm II, P. Data Manipulation at Scale.
+\end{thebibliography}
+\end{document}
+
+
+
+
+
+
+
+
+
+

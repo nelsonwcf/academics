@@ -1,0 +1,390 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.23)  14 AUG 2016 17:53
+entering extended mode
+**./CorrocherFilho_Nelson_Unit7_Assignment.tex
+(CorrocherFilho_Nelson_Unit7_Assignment.tex
+LaTeX2e <2016/03/31> patch level 2
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+(preamble.tex
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx
+.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.s
+ty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics
+.sty"
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty
+"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphics
+.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdft
+ex.def"
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwar
+err.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmd
+s.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\placeins\placeins
+.sty"
+Package: placeins 2005/04/18  v 2.2
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings
+.sty"
+\lst@mode=\count89
+\lst@gtempboxa=\box28
+\lst@token=\toks17
+\lst@length=\count90
+\lst@currlwidth=\dimen105
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen106
+\lst@width=\dimen107
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen108
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.
+sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box29
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings
+.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\bera\beramono.sty
+"
+Package: beramono 2004/01/31 (WaS)
+)) (CorrocherFilho_Nelson_Unit7_Assignment.aux)
+\openout1 = `CorrocherFilho_Nelson_Unit7_Assignment.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
+kii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count97
+\scratchdimen=\dimen109
+\scratchbox=\box30
+\nofMPsegments=\count98
+\nofMParguments=\count99
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count100
+\MPscratchDim=\dimen110
+\MPnumerator=\count101
+\makeMPintoPDFobject=\count102
+\everyMPtoPDFconversion=\toks19
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftex
+cmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluat
+ex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.
+sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf
+-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.s
+ty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefi
+nekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoption
+s.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetk
+eys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcm
+ds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\c@lstlisting=\count103
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 6.
+
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_database.png, id=1, 543.5
+3062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_database.png Graphic
+ file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_database.png>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_d
+atabase.png used on input line 24.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 24--25
+ [][] 
+ []
+
+[1
+
+{C:/Users/Nelson/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (34.20319pt too wide) in paragraph at lines 34--35
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (73.6235pt too wide) in paragraph at lines 35--36
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.34329pt too wide) in paragraph at lines 36--37
+[][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 39.
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 39.
+
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 39.
+
+Overfull \hbox (47.34329pt too wide) in paragraph at lines 45--46
+[][][][][][][][][][][][][][][][] 
+ []
+
+[2 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_database.png>]
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_table_example.png, id=15,
+ 543.53062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_table_example.png Gr
+aphic file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_table_example.png>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_t
+able_example.png used on input line 58.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 58--59
+ [][] 
+ []
+
+
+Overfull \hbox (80.19356pt too wide) in paragraph at lines 65--66
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (80.19356pt too wide) in paragraph at lines 70--71
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/loading_data_example.png, id=16,
+ 543.53062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/loading_data_example.png Gr
+aphic file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/loading_data_example.png>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/loading_
+data_example.png used on input line 75.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 75--76
+ [][] 
+ []
+
+[3 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/create_table_example.png>]
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_statement_example.png, id
+=20, 543.53062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_statement_example.pn
+g Graphic file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_statement_example.png
+>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_s
+tatement_example.png used on input line 89.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 89--90
+ [][] 
+ []
+
+[4 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/loading_data_example.png>]
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_sum_example.png, id=24, 5
+43.53062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_sum_example.png Grap
+hic file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_sum_example.png>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_s
+um_example.png used on input line 100.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 100--101
+ [][] 
+ []
+
+[5 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_statement_example.png>
+]
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 113.
+
+ ("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmr.fd"
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 113.
+
+
+("C:\Users\Nelson\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 113.
+
+<C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_joint_example.png, id=28,
+ 543.53062pt x 350.81062pt>
+File: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_joint_example.png Gr
+aphic file (type png)
+
+<use C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_joint_example.png>
+Package pdftex.def Info: C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_j
+oint_example.png used on input line 121.
+(pdftex.def)             Requested size: 360.0pt x 232.36542pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 121--122
+ [][] 
+ []
+
+[6 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_sum_example.png>]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 130.
+
+[7 <C:/Users/Nelson/Desktop/Harrisburg/CISC/Unit7/select_joint_example.png>]
+(CorrocherFilho_Nelson_Unit7_Assignment.aux) ) 
+Here is how much of TeX's memory you used:
+ 2960 strings out of 493334
+ 46663 string characters out of 3129789
+ 111231 words of memory out of 3000000
+ 6445 multiletter control sequences out of 15000+200000
+ 25032 words of font info for 32 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,6n,32p,622b,1117s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Nelson/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Nelson/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Nelson/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/Nelson/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nelson/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Ne
+lson/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Use
+rs/Nelson/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:
+/Users/Nelson/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
+><C:/Users/Nelson/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17
+.pfb><C:/Users/Nelson/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
+msy10.pfb>
+Output written on CorrocherFilho_Nelson_Unit7_Assignment.pdf (7 pages, 265088 b
+ytes).
+PDF statistics:
+ 63 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+
